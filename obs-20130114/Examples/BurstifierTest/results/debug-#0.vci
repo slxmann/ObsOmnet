@@ -1,0 +1,71 @@
+file 2314 1750078755                                            
+version 3
+run debug-0-20250616-14:59:11-2490766
+attr configname debug
+attr datetime 20250616-14:59:11
+attr datetimef 20250616-145911
+attr experiment debug
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network BurstifierTest
+attr processid 2490766
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config **.burstifier.timeout 100s
+config **.burstifier.maxSize 3500B
+config **.burstifier.numPackets 41
+config **.burstifier.minOffset 0.1s
+config **.burstifier.maxOffset 0.3s
+config **.burstifier.minSizeWithPadding 3500B
+config **.burstifier.overflowLastPacket true
+config **.burstifier.cteHeader 8B
+config **.burstifier.varHeader 1B
+config **BurstifierTest.sink.protocol 171
+config **.generator.protocol 170
+config network BurstifierTest
+config **.vector-recording false
+config **.scalar-recording false
+config **.generator.startTime 0s
+config **.generator.packetInterval exponential(1s)
+config **.generator.numPackets 100000
+config **.generator.packetLength 1000B
+config **.generator.destAddresses "\"10.0.0.2\""
+config **.burstifier.destLabel 42
+
+vector 0 BurstifierTest.generator packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 1 BurstifierTest.generator packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 2 BurstifierTest.generator endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 3 BurstifierTest.sink packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 4 BurstifierTest.sink endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 5 BurstifierTest.burstifier burstifierInPacketSize ETV
+vector 6 BurstifierTest.burstifier avgPacketTime ETV
+

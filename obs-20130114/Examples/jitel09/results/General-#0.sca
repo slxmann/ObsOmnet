@@ -1,0 +1,89 @@
+version 3
+run General-0-20250614-16:18:27-1287095
+attr configname General
+attr datetime 20250614-16:18:27
+attr datetimef 20250614-161827
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network jitel09Simulation
+attr processid 1287095
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config sim-time-limit 1s
+config network jitel09Simulation
+config allow-object-stealing-on-deletion true
+config **.vector-recording false
+config **.reportFile "\"\""
+config **.lambdasEdge1 2
+config **.lambdasEdge2 2
+config **.lambdasEdge3 2
+config **.lambdasEdge4 2
+config **.lambdasCore 4
+config **.scalar-recording false
+config **.dataRate 1000000000bps
+config **.edge1.outColours "\"3 6\""
+config **.edge2.outColours "\"9 12\""
+config **.edge3.outColours "\"3 6\""
+config **.edge4.outColours "\"9 12\""
+config **.core1.inputColours "\"3 6 | 9 12 | 9 3 12 6\""
+config **.core1.outputColours "\"3 6 | 9 12 | 9 3 12 6\""
+config **.core2.inputColours "\"3 6 | 9 12 | 9 3 12 6\""
+config **.core2.outputColours "\"3 6 | 9 12 | 9 3 12 6\""
+config **.packetBurstifier[0].destLabel 1
+config **.packetBurstifier[1].destLabel 2
+config **.packetBurstifier[2].destLabel 3
+config **.packetBurstifier[3].destLabel 4
+config **.numFileBurstifiers 0
+config **.numPacketBurstifiers 4
+config **.packetBurstifier[*].timeout 0.005s
+config **.packetBurstifier[*].maxSize 125000000B
+config **.packetBurstifier[*].numPackets 1
+config **.packetBurstifier[*].minOffset 0.001s
+config **.packetBurstifier[*].maxOffset 0.002s
+config **.packetBurstifier[*].minSizeWithPadding 8B
+config **.packetBurstifier[*].overflowLastPacket true
+config **.packetBurstifier[*].cteHeader 8B
+config **.packetBurstifier[*].varHeader 1B
+config **.sender.BCPSize 16B
+config **.sender.maxSchedBurstSize 0B
+config **.sender.maxSchedBurstElems 0
+config **.sender.testing false
+config **.core1.lambdasPerInPort "\"2 2 4\""
+config **.core1.lambdasPerOutPort "\"2 2 4\""
+config **.core2.lambdasPerInPort "\"2 2 4\""
+config **.core2.lambdasPerOutPort "\"2 2 4\""
+config **.OEConversionDelay 0s
+config **.EOConversionDelay 0s
+config **.BCPProcessingDelay 0s
+config **.sender.guardTime 0.000000001s
+config **.guardTime 0.000000001s
+config **.arp.cacheTimeout 100s
+config **.ipv4configurator.dumpRoutes true
+config **.edge*.routingTable.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.ppp[0].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.eth[0].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.ethEncap[*].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.networkLayer.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.obs.assembler.sender.interfaceTableModule "\"^.^.^.interfaceTable\""
+config **.edge*.obs.interfaceTableModule "\"^.interfaceTable\""
+config **.host*.numApps 1
+config **.host1.app[*].typename UdpBasicApp
+config **.host1.app[*].destAddresses "\"host3\""
+config **.host1.app[*].messageLength 65000B
+config **.host1.app[*].sendInterval exponential(0.0000325s)
+config **.host2.app[*].typename UdpBasicApp
+config **.host2.app[*].destAddresses "\"host4\""
+config **.host2.app[*].messageLength 65000B
+config **.host2.app[*].sendInterval exponential(0.00065s)
+config **.host*.app[*].typename UdpSink
+config **.host*.app[*].localPort 1000
+config **.host*.app[*].destPort 1000
+

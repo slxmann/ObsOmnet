@@ -1,0 +1,2635 @@
+version 3
+run General-0-20250613-12:44:08-562048
+attr configname General
+attr datetime 20250613-12:44:08
+attr datetimef 20250613-124408
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network EdgeNodeTest
+attr processid 562048
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config network EdgeNodeTest
+config **.dispatcher.recvPacketSize.vector-recording true
+config **.packetBurstifier[*].packetBurstifierIn.vector-recording true
+config **.dataRate 10e6bps
+config **.edge1.outColours "\"\""
+config **.edge2.outColours "\"\""
+config **.numFileBurstifiers 1
+config **.numPacketBurstifiers 0
+config **.num*Lambdas 1
+config **.dispatcherRules "\"\""
+config **.sender.maxSchedBurstSize 0B
+config **.sender.maxSchedBurstElems 0
+config **.sender.guardTime 0.0000001s
+config **.sender.BCPSize 125B
+config **.sender.testing false
+config **.packetBurstifier[*].destLabel 0
+config **.packetBurstifier[*].timeout 10ms
+config **.packetBurstifier[*].maxSize 450000000B
+config **.packetBurstifier[*].numPackets 5000
+config **.packetBurstifier[*].minOffset 0.001s
+config **.packetBurstifier[*].maxOffset 0.01s
+config **.packetBurstifier[*].minSizeWithPadding 8B
+config **.packetBurstifier[*].overflowLastPacket true
+config **.packetBurstifier[*].cteHeader 812B
+config **.packetBurstifier[*].varHeader 18B
+config **.fileBurstifier[*].destLabel 2
+config **.fileBurstifier[*].burstFile "\"bursts.txt\""
+config **.monitor.reportFile "\"dataTest.dat\""
+config **.edge*.routingTable.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.ppp[0].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.eth[0].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.networkLayer.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.obs.assembler.sender.interfaceTableModule "\"^.^.^.interfaceTable\""
+config **.edge*.ethEncap[*].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.obs.interfaceTableModule "\"^.interfaceTable\""
+config allow-object-stealing-on-deletion true
+
+scalar EdgeNodeTest.edge1.obs.assembler.fileBurstifier[0] "my ID" 84
+scalar EdgeNodeTest.edge2.obs.assembler.fileBurstifier[0] "my ID" 119
+par EdgeNodeTest.host1.ethg$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeTest.host1.ethg$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeTest.host1.ethg$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeTest.host1.ethg$o[0].channel datarate 1e+11bps
+attr mutable ""
+attr unit bps
+par EdgeNodeTest.host1.ethg$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeTest.host1.ethg$o[0].channel per 0
+attr mutable ""
+par EdgeNodeTest.edge1.ethIO$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeTest.edge1.ethIO$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeTest.edge1.ethIO$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeTest.edge1.ethIO$o[0].channel datarate 1e+11bps
+attr mutable ""
+attr unit bps
+par EdgeNodeTest.edge1.ethIO$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeTest.edge1.ethIO$o[0].channel per 0
+attr mutable ""
+par EdgeNodeTest.host2.ethg$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeTest.host2.ethg$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeTest.host2.ethg$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeTest.host2.ethg$o[0].channel datarate 1e+11bps
+attr mutable ""
+attr unit bps
+par EdgeNodeTest.host2.ethg$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeTest.host2.ethg$o[0].channel per 0
+attr mutable ""
+par EdgeNodeTest.edge2.ethIO$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeTest.edge2.ethIO$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeTest.edge2.ethIO$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeTest.edge2.ethIO$o[0].channel datarate 1e+11bps
+attr mutable ""
+attr unit bps
+par EdgeNodeTest.edge2.ethIO$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeTest.edge2.ethIO$o[0].channel per 0
+attr mutable ""
+par EdgeNodeTest.host1.ethg$i[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.eth[0].phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeTest.host1.interfaceTable displayAddresses false
+par EdgeNodeTest.host1.cb typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.cb displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.cb forwardServiceRegistration true
+par EdgeNodeTest.host1.cb forwardProtocolRegistration true
+par EdgeNodeTest.host1.bl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.bl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.bl forwardServiceRegistration true
+par EdgeNodeTest.host1.bl forwardProtocolRegistration true
+par EdgeNodeTest.host1.ethernet typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeTest.host1.ethernet registerProtocol true
+par EdgeNodeTest.host1.ethernet interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ethernet fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1.ethernet stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.host1.ethernet stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.host1.ethernet pauseSent:count 0
+attr recordingmode count
+attr title "pause sent, count"
+scalar EdgeNodeTest.host1.ethernet pauseSent:sum 0
+attr recordingmode sum
+attr title "pause sent, sum"
+scalar EdgeNodeTest.host1.ethernet decapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EdgeNodeTest.host1.ethernet decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ethernet encapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EdgeNodeTest.host1.ethernet encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+par EdgeNodeTest.host1.li typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.li displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.li forwardServiceRegistration true
+par EdgeNodeTest.host1.li forwardProtocolRegistration true
+par EdgeNodeTest.host1.lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par EdgeNodeTest.host1.lo[0].lo interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.lo[0].lo mtu 4470B
+attr unit B
+scalar EdgeNodeTest.host1.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EdgeNodeTest.host1.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host1.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.host1.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+par EdgeNodeTest.host1.lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par EdgeNodeTest.host1.lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.host1.lo[0] recordPcap false
+par EdgeNodeTest.host1.lo[0] numPcapRecorders 0
+par EdgeNodeTest.host1.lo[0] interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+scalar EdgeNodeTest.host1.lo[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.host1.lo[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host1.lo[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.host1.lo[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.host1.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeTest.host1.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeTest.host1.eth[0].queue packetCapacity 1000
+par EdgeNodeTest.host1.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeTest.host1.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeTest.host1.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeTest.host1.eth[0].queue bufferModule "\"\""
+scalar EdgeNodeTest.host1.eth[0].queue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue queueLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar EdgeNodeTest.host1.eth[0].queue queueBitLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar EdgeNodeTest.host1.eth[0].queue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic EdgeNodeTest.host1.eth[0].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host1.eth[0].queue outgoingPackets:count 0
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue outgoingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.host1.eth[0].queue outgoingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic EdgeNodeTest.host1.eth[0].queue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host1.eth[0].queue incomingPackets:count 0
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue incomingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.host1.eth[0].queue incomingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host1.eth[0].queue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar EdgeNodeTest.host1.eth[0].queue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par EdgeNodeTest.host1.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeTest.host1.eth[0].mac interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeTest.host1.eth[0].mac sendRawBytes false
+par EdgeNodeTest.host1.eth[0].mac promiscuous false
+par EdgeNodeTest.host1.eth[0].mac duplexMode true
+par EdgeNodeTest.host1.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeTest.host1.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.host1.eth[0].mac stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.host1.eth[0].mac "simulated time" 124.3500087
+scalar EdgeNodeTest.host1.eth[0].mac full-duplex 1
+scalar EdgeNodeTest.host1.eth[0].mac "frames/sec sent" 0
+scalar EdgeNodeTest.host1.eth[0].mac "frames/sec rcvd" 0
+scalar EdgeNodeTest.host1.eth[0].mac "bits/sec sent" 0
+scalar EdgeNodeTest.host1.eth[0].mac "bits/sec rcvd" 0
+scalar EdgeNodeTest.host1.eth[0].mac "rx channel idle (%)" 100
+scalar EdgeNodeTest.host1.eth[0].mac "rx channel utilization (%)" 0
+scalar EdgeNodeTest.host1.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units received, count"
+scalar EdgeNodeTest.host1.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units received, sum"
+scalar EdgeNodeTest.host1.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units sent, count"
+scalar EdgeNodeTest.host1.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units sent, sum"
+scalar EdgeNodeTest.host1.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EdgeNodeTest.host1.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EdgeNodeTest.host1.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EdgeNodeTest.host1.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.host1.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EdgeNodeTest.host1.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+par EdgeNodeTest.host1.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeTest.host1.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.host1.eth[0] recordPcap false
+par EdgeNodeTest.host1.eth[0] numPcapRecorders 0
+par EdgeNodeTest.host1.eth[0] interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeTest.host1.eth[0] address "\"0A-AA-00-00-00-01\""
+attr mutable ""
+par EdgeNodeTest.host1.eth[0] duplexMode true
+par EdgeNodeTest.host1.eth[0] csmacdSupport false
+par EdgeNodeTest.host1.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeTest.host1.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+scalar EdgeNodeTest.host1.eth[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.host1.eth[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host1.eth[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.host1.eth[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.host1.ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.ipv4.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host1.ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeTest.host1.ipv4.configurator interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.configurator routingTableModule "\"EdgeNodeTest.host1.ipv4.routingTable\""
+par EdgeNodeTest.host1.ipv4.configurator networkConfiguratorModule "\"configurator\""
+par EdgeNodeTest.host1.ipv4.configurator configureRoutingTable true
+par EdgeNodeTest.host1.ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.host1.ipv4.routingTable interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.routingTable routerId "\"auto\""
+par EdgeNodeTest.host1.ipv4.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.host1.ipv4.routingTable forwarding false
+par EdgeNodeTest.host1.ipv4.routingTable multicastForwarding false
+par EdgeNodeTest.host1.ipv4.routingTable useAdminDist false
+par EdgeNodeTest.host1.ipv4.routingTable routingFile "\"H1.irt\""
+par EdgeNodeTest.host1.ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeTest.host1.ipv4.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeTest.host1.ipv4.natTable config "<config/> at content:1"
+par EdgeNodeTest.host1.ipv4.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.ipv4.up forwardServiceRegistration true
+par EdgeNodeTest.host1.ipv4.up forwardProtocolRegistration true
+par EdgeNodeTest.host1.ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeTest.host1.ipv4.igmp interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.igmp routingTableModule "\"EdgeNodeTest.host1.ipv4.routingTable\""
+par EdgeNodeTest.host1.ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1.ipv4.igmp enabled true
+par EdgeNodeTest.host1.ipv4.igmp robustnessVariable 2
+par EdgeNodeTest.host1.ipv4.igmp queryInterval 125s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp startupQueryCount 2
+par EdgeNodeTest.host1.ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeTest.host1.ipv4.igmp lastMemberQueryCount 2
+par EdgeNodeTest.host1.ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeTest.host1.ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeTest.host1.ipv4.icmp interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.icmp routingTableModule "\"EdgeNodeTest.host1.ipv4.routingTable\""
+par EdgeNodeTest.host1.ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeTest.host1.ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeTest.host1.ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.ipv4.mp forwardServiceRegistration true
+par EdgeNodeTest.host1.ipv4.mp forwardProtocolRegistration true
+par EdgeNodeTest.host1.ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeTest.host1.ipv4.ip interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.ip routingTableModule "\"EdgeNodeTest.host1.ipv4.routingTable\""
+par EdgeNodeTest.host1.ipv4.ip arpModule "\"EdgeNodeTest.host1.ipv4.arp\""
+par EdgeNodeTest.host1.ipv4.ip icmpModule "\"EdgeNodeTest.host1.ipv4.icmp\""
+par EdgeNodeTest.host1.ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1.ipv4.ip timeToLive 32
+par EdgeNodeTest.host1.ipv4.ip multicastTimeToLive 32
+par EdgeNodeTest.host1.ipv4.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeTest.host1.ipv4.ip limitedBroadcast false
+par EdgeNodeTest.host1.ipv4.ip directBroadcastInterfaces "\"\""
+scalar EdgeNodeTest.host1.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EdgeNodeTest.host1.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par EdgeNodeTest.host1.ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeTest.host1.ipv4.arp interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4.arp routingTableModule "\"EdgeNodeTest.host1.ipv4.routingTable\""
+par EdgeNodeTest.host1.ipv4.arp retryTimeout 1s
+attr unit s
+par EdgeNodeTest.host1.ipv4.arp retryCount 3
+par EdgeNodeTest.host1.ipv4.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeTest.host1.ipv4.arp proxyArpInterfaces "\"\""
+scalar EdgeNodeTest.host1.ipv4.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar EdgeNodeTest.host1.ipv4.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar EdgeNodeTest.host1.ipv4.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar EdgeNodeTest.host1.ipv4.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EdgeNodeTest.host1.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EdgeNodeTest.host1.ipv4.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EdgeNodeTest.host1.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par EdgeNodeTest.host1.ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.ipv4.lp forwardServiceRegistration true
+par EdgeNodeTest.host1.ipv4.lp forwardProtocolRegistration true
+par EdgeNodeTest.host1.ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeTest.host1.ipv4 forwarding false
+par EdgeNodeTest.host1.ipv4 multicastForwarding false
+par EdgeNodeTest.host1.ipv4 interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.ipv4 displayStringTextFormat "\"%i\""
+par EdgeNodeTest.host1.nl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.nl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.nl forwardServiceRegistration true
+par EdgeNodeTest.host1.nl forwardProtocolRegistration true
+par EdgeNodeTest.host1.udp typename "\"inet.transportlayer.udp.Udp\""
+par EdgeNodeTest.host1.udp interfaceTableModule "\"EdgeNodeTest.host1.interfaceTable\""
+par EdgeNodeTest.host1.udp icmpModule "\"^.ipv4.icmp\""
+par EdgeNodeTest.host1.udp icmpv6Module "\"^.ipv6.icmpv6\""
+par EdgeNodeTest.host1.udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par EdgeNodeTest.host1.udp defaultMulticastLoop true
+scalar EdgeNodeTest.host1.udp packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar EdgeNodeTest.host1.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EdgeNodeTest.host1.udp packetSent:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar EdgeNodeTest.host1.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EdgeNodeTest.host1.udp passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EdgeNodeTest.host1.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EdgeNodeTest.host1.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+par EdgeNodeTest.host1.tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par EdgeNodeTest.host1.tcp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1.tcp advertisedWindow 7504
+par EdgeNodeTest.host1.tcp delayedAcksEnabled false
+par EdgeNodeTest.host1.tcp nagleEnabled true
+par EdgeNodeTest.host1.tcp limitedTransmitEnabled false
+par EdgeNodeTest.host1.tcp increasedIWEnabled false
+par EdgeNodeTest.host1.tcp sackSupport false
+par EdgeNodeTest.host1.tcp windowScalingSupport false
+par EdgeNodeTest.host1.tcp windowScalingFactor -1
+par EdgeNodeTest.host1.tcp timestampSupport false
+par EdgeNodeTest.host1.tcp mss 536
+par EdgeNodeTest.host1.tcp msl 120s
+attr unit s
+par EdgeNodeTest.host1.tcp tcpAlgorithmClass "\"TcpReno\""
+par EdgeNodeTest.host1.tcp useDataNotification false
+par EdgeNodeTest.host1.tcp dupthresh 3
+par EdgeNodeTest.host1.tcp initialSsthresh 4294967295
+par EdgeNodeTest.host1.tcp stopOperationExtraTime 0s
+attr unit s
+par EdgeNodeTest.host1.tcp stopOperationTimeout 2s
+attr unit s
+par EdgeNodeTest.host1.tcp ecnWillingness false
+par EdgeNodeTest.host1.tcp dctcpGamma 0.0625
+par EdgeNodeTest.host1.tn typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.tn displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.tn forwardServiceRegistration true
+par EdgeNodeTest.host1.tn forwardProtocolRegistration true
+par EdgeNodeTest.host1.at typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host1.at displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host1.at forwardServiceRegistration true
+par EdgeNodeTest.host1.at forwardProtocolRegistration true
+par EdgeNodeTest.host1 typename "\"inet.node.inet.StandardHost\""
+par EdgeNodeTest.host1 hasStatus false
+par EdgeNodeTest.host1 osgModel "\"\""
+par EdgeNodeTest.host1 osgModelColor "\"\""
+par EdgeNodeTest.host1 canvasImage "\"\""
+par EdgeNodeTest.host1 canvasImageColor "\"\""
+par EdgeNodeTest.host1 recordPcap false
+par EdgeNodeTest.host1 numPcapRecorders 0
+par EdgeNodeTest.host1 numLoInterfaces 1
+par EdgeNodeTest.host1 numWlanInterfaces 0
+par EdgeNodeTest.host1 numEthInterfaces 0
+par EdgeNodeTest.host1 numPppInterfaces 0
+par EdgeNodeTest.host1 numTunInterfaces 0
+par EdgeNodeTest.host1 numVirtInterfaces 0
+par EdgeNodeTest.host1 fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host1 hasIpv4 true
+par EdgeNodeTest.host1 hasIpv6 false
+par EdgeNodeTest.host1 hasGn false
+par EdgeNodeTest.host1 forwarding false
+par EdgeNodeTest.host1 multicastForwarding false
+par EdgeNodeTest.host1 hasUdp true
+par EdgeNodeTest.host1 hasTcp true
+par EdgeNodeTest.host1 hasSctp false
+par EdgeNodeTest.host1 numApps 0
+par EdgeNodeTest.edge1.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeTest.edge1.interfaceTable displayAddresses false
+par EdgeNodeTest.edge1.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.edge1.routingTable interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge1.routingTable routerId "\"auto\""
+par EdgeNodeTest.edge1.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.edge1.routingTable forwarding true
+par EdgeNodeTest.edge1.routingTable multicastForwarding false
+par EdgeNodeTest.edge1.routingTable useAdminDist false
+par EdgeNodeTest.edge1.routingTable routingFile "\"Edge1.irt\""
+par EdgeNodeTest.edge1.networkLayer.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.lp.out[3].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.ifInV[1].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.networkLayer.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeTest.edge1.networkLayer.configurator interfaceTableModule "\"EdgeNodeTest.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.configurator routingTableModule "\"EdgeNodeTest.edge1.networkLayer.routingTable\""
+par EdgeNodeTest.edge1.networkLayer.configurator networkConfiguratorModule "\"^.^.ipv4configurator\""
+par EdgeNodeTest.edge1.networkLayer.configurator configureRoutingTable true
+par EdgeNodeTest.edge1.networkLayer.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.edge1.networkLayer.routingTable interfaceTableModule "\"EdgeNodeTest.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.routingTable routerId "\"auto\""
+par EdgeNodeTest.edge1.networkLayer.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.edge1.networkLayer.routingTable forwarding true
+par EdgeNodeTest.edge1.networkLayer.routingTable multicastForwarding false
+par EdgeNodeTest.edge1.networkLayer.routingTable useAdminDist false
+par EdgeNodeTest.edge1.networkLayer.routingTable routingFile "\"\""
+par EdgeNodeTest.edge1.networkLayer.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeTest.edge1.networkLayer.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeTest.edge1.networkLayer.natTable config "<config/> at content:1"
+par EdgeNodeTest.edge1.networkLayer.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge1.networkLayer.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge1.networkLayer.up forwardServiceRegistration true
+par EdgeNodeTest.edge1.networkLayer.up forwardProtocolRegistration true
+par EdgeNodeTest.edge1.networkLayer.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeTest.edge1.networkLayer.igmp interfaceTableModule "\"EdgeNodeTest.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.igmp routingTableModule "\"EdgeNodeTest.edge1.networkLayer.routingTable\""
+par EdgeNodeTest.edge1.networkLayer.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge1.networkLayer.igmp enabled true
+par EdgeNodeTest.edge1.networkLayer.igmp robustnessVariable 2
+par EdgeNodeTest.edge1.networkLayer.igmp queryInterval 125s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp startupQueryCount 2
+par EdgeNodeTest.edge1.networkLayer.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.igmp lastMemberQueryCount 2
+par EdgeNodeTest.edge1.networkLayer.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeTest.edge1.networkLayer.icmp interfaceTableModule "\"EdgeNodeTest.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.icmp routingTableModule "\"EdgeNodeTest.edge1.networkLayer.routingTable\""
+par EdgeNodeTest.edge1.networkLayer.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeTest.edge1.networkLayer.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeTest.edge1.networkLayer.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge1.networkLayer.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge1.networkLayer.mp forwardServiceRegistration true
+par EdgeNodeTest.edge1.networkLayer.mp forwardProtocolRegistration true
+par EdgeNodeTest.edge1.networkLayer.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeTest.edge1.networkLayer.ip interfaceTableModule "\"^.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.ip routingTableModule "\"^.^.routingTable\""
+par EdgeNodeTest.edge1.networkLayer.ip arpModule "\"EdgeNodeTest.edge1.networkLayer.arp\""
+par EdgeNodeTest.edge1.networkLayer.ip icmpModule "\"EdgeNodeTest.edge1.networkLayer.icmp\""
+par EdgeNodeTest.edge1.networkLayer.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge1.networkLayer.ip timeToLive 32
+par EdgeNodeTest.edge1.networkLayer.ip multicastTimeToLive 32
+par EdgeNodeTest.edge1.networkLayer.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.ip limitedBroadcast false
+par EdgeNodeTest.edge1.networkLayer.ip directBroadcastInterfaces "\"\""
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EdgeNodeTest.edge1.networkLayer.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par EdgeNodeTest.edge1.networkLayer.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeTest.edge1.networkLayer.arp interfaceTableModule "\"EdgeNodeTest.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer.arp routingTableModule "\"EdgeNodeTest.edge1.networkLayer.routingTable\""
+par EdgeNodeTest.edge1.networkLayer.arp retryTimeout 1s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.arp retryCount 3
+par EdgeNodeTest.edge1.networkLayer.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeTest.edge1.networkLayer.arp proxyArpInterfaces "\"*\""
+scalar EdgeNodeTest.edge1.networkLayer.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EdgeNodeTest.edge1.networkLayer.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par EdgeNodeTest.edge1.networkLayer.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge1.networkLayer.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge1.networkLayer.lp forwardServiceRegistration true
+par EdgeNodeTest.edge1.networkLayer.lp forwardProtocolRegistration true
+par EdgeNodeTest.edge1.networkLayer typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeTest.edge1.networkLayer forwarding true
+par EdgeNodeTest.edge1.networkLayer multicastForwarding false
+par EdgeNodeTest.edge1.networkLayer interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge1.networkLayer displayStringTextFormat "\"%i\""
+par EdgeNodeTest.edge1.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge1.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeTest.edge1.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeTest.edge1.eth[0].queue packetCapacity 1000
+par EdgeNodeTest.edge1.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeTest.edge1.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeTest.edge1.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeTest.edge1.eth[0].queue bufferModule "\"\""
+scalar EdgeNodeTest.edge1.eth[0].queue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue queueLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar EdgeNodeTest.edge1.eth[0].queue queueBitLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar EdgeNodeTest.edge1.eth[0].queue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic EdgeNodeTest.edge1.eth[0].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge1.eth[0].queue outgoingPackets:count 0
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue outgoingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.edge1.eth[0].queue outgoingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic EdgeNodeTest.edge1.eth[0].queue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge1.eth[0].queue incomingPackets:count 0
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue incomingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.edge1.eth[0].queue incomingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge1.eth[0].queue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar EdgeNodeTest.edge1.eth[0].queue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par EdgeNodeTest.edge1.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeTest.edge1.eth[0].mac interfaceTableModule "\"EdgeNodeTest.edge1.eth[0].^.interfaceTable\""
+par EdgeNodeTest.edge1.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeTest.edge1.eth[0].mac sendRawBytes false
+par EdgeNodeTest.edge1.eth[0].mac promiscuous false
+par EdgeNodeTest.edge1.eth[0].mac duplexMode true
+par EdgeNodeTest.edge1.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeTest.edge1.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge1.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.edge1.eth[0].mac stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.edge1.eth[0].mac "simulated time" 124.3500087
+scalar EdgeNodeTest.edge1.eth[0].mac full-duplex 1
+scalar EdgeNodeTest.edge1.eth[0].mac "frames/sec sent" 0
+scalar EdgeNodeTest.edge1.eth[0].mac "frames/sec rcvd" 0
+scalar EdgeNodeTest.edge1.eth[0].mac "bits/sec sent" 0
+scalar EdgeNodeTest.edge1.eth[0].mac "bits/sec rcvd" 0
+scalar EdgeNodeTest.edge1.eth[0].mac "rx channel idle (%)" 100
+scalar EdgeNodeTest.edge1.eth[0].mac "rx channel utilization (%)" 0
+scalar EdgeNodeTest.edge1.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units received, count"
+scalar EdgeNodeTest.edge1.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units received, sum"
+scalar EdgeNodeTest.edge1.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units sent, count"
+scalar EdgeNodeTest.edge1.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units sent, sum"
+scalar EdgeNodeTest.edge1.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EdgeNodeTest.edge1.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EdgeNodeTest.edge1.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EdgeNodeTest.edge1.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.edge1.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EdgeNodeTest.edge1.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+par EdgeNodeTest.edge1.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeTest.edge1.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.edge1.eth[0] recordPcap false
+par EdgeNodeTest.edge1.eth[0] numPcapRecorders 0
+par EdgeNodeTest.edge1.eth[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge1.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeTest.edge1.eth[0] address "\"0A-AA-00-00-00-02\""
+attr mutable ""
+par EdgeNodeTest.edge1.eth[0] duplexMode true
+par EdgeNodeTest.edge1.eth[0] csmacdSupport false
+par EdgeNodeTest.edge1.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeTest.edge1.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+scalar EdgeNodeTest.edge1.eth[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.edge1.eth[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.eth[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.edge1.eth[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.edge1.obs.assembler.dispatcher typename "\"obsmodules.src.EdgeNode.OBS_PacketDispatcher\""
+par EdgeNodeTest.edge1.obs.assembler.dispatcher numQueues 0
+par EdgeNodeTest.edge1.obs.assembler.dispatcher dispatcherRules "\"\""
+scalar EdgeNodeTest.edge1.obs.assembler.dispatcher "Packets received" 0
+scalar EdgeNodeTest.edge1.obs.assembler.dispatcher "Average packet size" -nan
+scalar EdgeNodeTest.edge1.obs.assembler.dispatcher "Packet size variance" nan
+scalar EdgeNodeTest.edge1.obs.assembler.dispatcher "Dropped Packets" 0
+par EdgeNodeTest.edge1.obs.assembler.fileBurstifier[0] typename "\"obsmodules.src.EdgeNode.OBS_FileBurstifier\""
+par EdgeNodeTest.edge1.obs.assembler.fileBurstifier[0] destLabel 2
+par EdgeNodeTest.edge1.obs.assembler.fileBurstifier[0] burstFile "\"bursts.txt\""
+par EdgeNodeTest.edge1.obs.assembler.sender typename "\"obsmodules.src.EdgeNode.OBS_BurstSender\""
+par EdgeNodeTest.edge1.obs.assembler.sender interfaceTableModule "\"^.^.^.interfaceTable\""
+par EdgeNodeTest.edge1.obs.assembler.sender colours "\"\""
+par EdgeNodeTest.edge1.obs.assembler.sender numLambdas 1
+par EdgeNodeTest.edge1.obs.assembler.sender dataRate 1e+07bps
+attr unit bps
+par EdgeNodeTest.edge1.obs.assembler.sender BCPSize 125B
+attr unit B
+par EdgeNodeTest.edge1.obs.assembler.sender maxSchedBurstSize 0B
+attr unit B
+par EdgeNodeTest.edge1.obs.assembler.sender maxSchedBurstElems 0
+par EdgeNodeTest.edge1.obs.assembler.sender guardTime 1e-07s
+attr unit s
+par EdgeNodeTest.edge1.obs.assembler.sender testing false
+scalar EdgeNodeTest.edge1.obs.assembler.sender "burst sent" 88
+scalar EdgeNodeTest.edge1.obs.assembler.sender "burst dropped by reaching Minimum Offset" 0
+scalar EdgeNodeTest.edge1.obs.assembler.sender "burst dropped by queue" 0
+scalar EdgeNodeTest.edge1.obs.assembler.sender "BCPs pending to be sent (because the control channel is busy)" 0
+par EdgeNodeTest.edge1.obs.assembler typename "\"obsmodules.src.EdgeNode.OBS_BurstAssembler\""
+par EdgeNodeTest.edge1.obs.assembler colours "\"\""
+par EdgeNodeTest.edge1.obs.assembler numLambdas 1
+par EdgeNodeTest.edge1.obs.assembler numPacketBurstifiers 0
+par EdgeNodeTest.edge1.obs.assembler numFileBurstifiers 1
+par EdgeNodeTest.edge1.obs.disassembler typename "\"obsmodules.src.EdgeNode.OBS_BurstDisassembler\""
+scalar EdgeNodeTest.edge1.obs.disassembler "received Bursts" 88
+par EdgeNodeTest.edge1.obs typename "\"obsmodules.src.EdgeNode.OBS_EdgeInterface\""
+par EdgeNodeTest.edge1.obs displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.edge1.obs recordPcap false
+par EdgeNodeTest.edge1.obs numPcapRecorders 0
+par EdgeNodeTest.edge1.obs interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge1.obs outColours "\"\""
+par EdgeNodeTest.edge1.obs numInLambdas 1
+par EdgeNodeTest.edge1.obs numOutLambdas 1
+scalar EdgeNodeTest.edge1.obs packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.edge1.obs packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.obs packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.edge1.obs packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.edge1.ethEncap[0] typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeTest.edge1.ethEncap[0] registerProtocol true
+par EdgeNodeTest.edge1.ethEncap[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge1.ethEncap[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge1.ethEncap[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.edge1.ethEncap[0] stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.edge1.ethEncap[0] pauseSent:count 0
+attr recordingmode count
+attr title "pause sent, count"
+scalar EdgeNodeTest.edge1.ethEncap[0] pauseSent:sum 0
+attr recordingmode sum
+attr title "pause sent, sum"
+scalar EdgeNodeTest.edge1.ethEncap[0] decapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EdgeNodeTest.edge1.ethEncap[0] decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EdgeNodeTest.edge1.ethEncap[0] encapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EdgeNodeTest.edge1.ethEncap[0] encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+par EdgeNodeTest.edge1 typename "\"obsmodules.src.EdgeNode.OBS_EdgeNode\""
+par EdgeNodeTest.edge1 numInLambdas 1
+par EdgeNodeTest.edge1 numOutLambdas 1
+par EdgeNodeTest.edge1 outColours "\"\""
+par EdgeNodeTest.monitor typename "\"obsmodules.src.misc.OBS_OpticalMonitor\""
+par EdgeNodeTest.monitor reportFile "\"dataTest.dat\""
+par EdgeNodeTest.edge2.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeTest.edge2.interfaceTable displayAddresses false
+par EdgeNodeTest.edge2.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.edge2.routingTable interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge2.routingTable routerId "\"auto\""
+par EdgeNodeTest.edge2.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.edge2.routingTable forwarding true
+par EdgeNodeTest.edge2.routingTable multicastForwarding false
+par EdgeNodeTest.edge2.routingTable useAdminDist false
+par EdgeNodeTest.edge2.routingTable routingFile "\"Edge2.irt\""
+par EdgeNodeTest.edge2.networkLayer.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.lp.out[3].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.ifInV[1].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.networkLayer.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeTest.edge2.networkLayer.configurator interfaceTableModule "\"EdgeNodeTest.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.configurator routingTableModule "\"EdgeNodeTest.edge2.networkLayer.routingTable\""
+par EdgeNodeTest.edge2.networkLayer.configurator networkConfiguratorModule "\"^.^.ipv4configurator\""
+par EdgeNodeTest.edge2.networkLayer.configurator configureRoutingTable true
+par EdgeNodeTest.edge2.networkLayer.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.edge2.networkLayer.routingTable interfaceTableModule "\"EdgeNodeTest.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.routingTable routerId "\"auto\""
+par EdgeNodeTest.edge2.networkLayer.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.edge2.networkLayer.routingTable forwarding true
+par EdgeNodeTest.edge2.networkLayer.routingTable multicastForwarding false
+par EdgeNodeTest.edge2.networkLayer.routingTable useAdminDist false
+par EdgeNodeTest.edge2.networkLayer.routingTable routingFile "\"\""
+par EdgeNodeTest.edge2.networkLayer.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeTest.edge2.networkLayer.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeTest.edge2.networkLayer.natTable config "<config/> at content:1"
+par EdgeNodeTest.edge2.networkLayer.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge2.networkLayer.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge2.networkLayer.up forwardServiceRegistration true
+par EdgeNodeTest.edge2.networkLayer.up forwardProtocolRegistration true
+par EdgeNodeTest.edge2.networkLayer.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeTest.edge2.networkLayer.igmp interfaceTableModule "\"EdgeNodeTest.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.igmp routingTableModule "\"EdgeNodeTest.edge2.networkLayer.routingTable\""
+par EdgeNodeTest.edge2.networkLayer.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge2.networkLayer.igmp enabled true
+par EdgeNodeTest.edge2.networkLayer.igmp robustnessVariable 2
+par EdgeNodeTest.edge2.networkLayer.igmp queryInterval 125s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp startupQueryCount 2
+par EdgeNodeTest.edge2.networkLayer.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.igmp lastMemberQueryCount 2
+par EdgeNodeTest.edge2.networkLayer.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeTest.edge2.networkLayer.icmp interfaceTableModule "\"EdgeNodeTest.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.icmp routingTableModule "\"EdgeNodeTest.edge2.networkLayer.routingTable\""
+par EdgeNodeTest.edge2.networkLayer.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeTest.edge2.networkLayer.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeTest.edge2.networkLayer.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge2.networkLayer.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge2.networkLayer.mp forwardServiceRegistration true
+par EdgeNodeTest.edge2.networkLayer.mp forwardProtocolRegistration true
+par EdgeNodeTest.edge2.networkLayer.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeTest.edge2.networkLayer.ip interfaceTableModule "\"^.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.ip routingTableModule "\"^.^.routingTable\""
+par EdgeNodeTest.edge2.networkLayer.ip arpModule "\"EdgeNodeTest.edge2.networkLayer.arp\""
+par EdgeNodeTest.edge2.networkLayer.ip icmpModule "\"EdgeNodeTest.edge2.networkLayer.icmp\""
+par EdgeNodeTest.edge2.networkLayer.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge2.networkLayer.ip timeToLive 32
+par EdgeNodeTest.edge2.networkLayer.ip multicastTimeToLive 32
+par EdgeNodeTest.edge2.networkLayer.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.ip limitedBroadcast false
+par EdgeNodeTest.edge2.networkLayer.ip directBroadcastInterfaces "\"\""
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EdgeNodeTest.edge2.networkLayer.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par EdgeNodeTest.edge2.networkLayer.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeTest.edge2.networkLayer.arp interfaceTableModule "\"EdgeNodeTest.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer.arp routingTableModule "\"EdgeNodeTest.edge2.networkLayer.routingTable\""
+par EdgeNodeTest.edge2.networkLayer.arp retryTimeout 1s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.arp retryCount 3
+par EdgeNodeTest.edge2.networkLayer.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeTest.edge2.networkLayer.arp proxyArpInterfaces "\"*\""
+scalar EdgeNodeTest.edge2.networkLayer.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EdgeNodeTest.edge2.networkLayer.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par EdgeNodeTest.edge2.networkLayer.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.edge2.networkLayer.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.edge2.networkLayer.lp forwardServiceRegistration true
+par EdgeNodeTest.edge2.networkLayer.lp forwardProtocolRegistration true
+par EdgeNodeTest.edge2.networkLayer typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeTest.edge2.networkLayer forwarding true
+par EdgeNodeTest.edge2.networkLayer multicastForwarding false
+par EdgeNodeTest.edge2.networkLayer interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge2.networkLayer displayStringTextFormat "\"%i\""
+par EdgeNodeTest.edge2.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.edge2.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeTest.edge2.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeTest.edge2.eth[0].queue packetCapacity 1000
+par EdgeNodeTest.edge2.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeTest.edge2.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeTest.edge2.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeTest.edge2.eth[0].queue bufferModule "\"\""
+scalar EdgeNodeTest.edge2.eth[0].queue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue queueLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar EdgeNodeTest.edge2.eth[0].queue queueBitLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar EdgeNodeTest.edge2.eth[0].queue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic EdgeNodeTest.edge2.eth[0].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge2.eth[0].queue outgoingPackets:count 0
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue outgoingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.edge2.eth[0].queue outgoingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic EdgeNodeTest.edge2.eth[0].queue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge2.eth[0].queue incomingPackets:count 0
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue incomingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.edge2.eth[0].queue incomingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.edge2.eth[0].queue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar EdgeNodeTest.edge2.eth[0].queue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par EdgeNodeTest.edge2.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeTest.edge2.eth[0].mac interfaceTableModule "\"EdgeNodeTest.edge2.eth[0].^.interfaceTable\""
+par EdgeNodeTest.edge2.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeTest.edge2.eth[0].mac sendRawBytes false
+par EdgeNodeTest.edge2.eth[0].mac promiscuous false
+par EdgeNodeTest.edge2.eth[0].mac duplexMode true
+par EdgeNodeTest.edge2.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeTest.edge2.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge2.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.edge2.eth[0].mac stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.edge2.eth[0].mac "simulated time" 124.3500087
+scalar EdgeNodeTest.edge2.eth[0].mac full-duplex 1
+scalar EdgeNodeTest.edge2.eth[0].mac "frames/sec sent" 0
+scalar EdgeNodeTest.edge2.eth[0].mac "frames/sec rcvd" 0
+scalar EdgeNodeTest.edge2.eth[0].mac "bits/sec sent" 0
+scalar EdgeNodeTest.edge2.eth[0].mac "bits/sec rcvd" 0
+scalar EdgeNodeTest.edge2.eth[0].mac "rx channel idle (%)" 100
+scalar EdgeNodeTest.edge2.eth[0].mac "rx channel utilization (%)" 0
+scalar EdgeNodeTest.edge2.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units received, count"
+scalar EdgeNodeTest.edge2.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units received, sum"
+scalar EdgeNodeTest.edge2.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units sent, count"
+scalar EdgeNodeTest.edge2.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units sent, sum"
+scalar EdgeNodeTest.edge2.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EdgeNodeTest.edge2.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EdgeNodeTest.edge2.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EdgeNodeTest.edge2.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.edge2.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EdgeNodeTest.edge2.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+par EdgeNodeTest.edge2.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeTest.edge2.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.edge2.eth[0] recordPcap false
+par EdgeNodeTest.edge2.eth[0] numPcapRecorders 0
+par EdgeNodeTest.edge2.eth[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge2.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeTest.edge2.eth[0] address "\"0A-AA-00-00-00-03\""
+attr mutable ""
+par EdgeNodeTest.edge2.eth[0] duplexMode true
+par EdgeNodeTest.edge2.eth[0] csmacdSupport false
+par EdgeNodeTest.edge2.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeTest.edge2.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+scalar EdgeNodeTest.edge2.eth[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.edge2.eth[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.eth[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.edge2.eth[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.edge2.obs.assembler.dispatcher typename "\"obsmodules.src.EdgeNode.OBS_PacketDispatcher\""
+par EdgeNodeTest.edge2.obs.assembler.dispatcher numQueues 0
+par EdgeNodeTest.edge2.obs.assembler.dispatcher dispatcherRules "\"\""
+scalar EdgeNodeTest.edge2.obs.assembler.dispatcher "Packets received" 0
+scalar EdgeNodeTest.edge2.obs.assembler.dispatcher "Average packet size" -nan
+scalar EdgeNodeTest.edge2.obs.assembler.dispatcher "Packet size variance" nan
+scalar EdgeNodeTest.edge2.obs.assembler.dispatcher "Dropped Packets" 0
+par EdgeNodeTest.edge2.obs.assembler.fileBurstifier[0] typename "\"obsmodules.src.EdgeNode.OBS_FileBurstifier\""
+par EdgeNodeTest.edge2.obs.assembler.fileBurstifier[0] destLabel 2
+par EdgeNodeTest.edge2.obs.assembler.fileBurstifier[0] burstFile "\"bursts.txt\""
+par EdgeNodeTest.edge2.obs.assembler.sender typename "\"obsmodules.src.EdgeNode.OBS_BurstSender\""
+par EdgeNodeTest.edge2.obs.assembler.sender interfaceTableModule "\"^.^.^.interfaceTable\""
+par EdgeNodeTest.edge2.obs.assembler.sender colours "\"\""
+par EdgeNodeTest.edge2.obs.assembler.sender numLambdas 1
+par EdgeNodeTest.edge2.obs.assembler.sender dataRate 1e+07bps
+attr unit bps
+par EdgeNodeTest.edge2.obs.assembler.sender BCPSize 125B
+attr unit B
+par EdgeNodeTest.edge2.obs.assembler.sender maxSchedBurstSize 0B
+attr unit B
+par EdgeNodeTest.edge2.obs.assembler.sender maxSchedBurstElems 0
+par EdgeNodeTest.edge2.obs.assembler.sender guardTime 1e-07s
+attr unit s
+par EdgeNodeTest.edge2.obs.assembler.sender testing false
+scalar EdgeNodeTest.edge2.obs.assembler.sender "burst sent" 88
+scalar EdgeNodeTest.edge2.obs.assembler.sender "burst dropped by reaching Minimum Offset" 0
+scalar EdgeNodeTest.edge2.obs.assembler.sender "burst dropped by queue" 0
+scalar EdgeNodeTest.edge2.obs.assembler.sender "BCPs pending to be sent (because the control channel is busy)" 0
+par EdgeNodeTest.edge2.obs.assembler typename "\"obsmodules.src.EdgeNode.OBS_BurstAssembler\""
+par EdgeNodeTest.edge2.obs.assembler colours "\"\""
+par EdgeNodeTest.edge2.obs.assembler numLambdas 1
+par EdgeNodeTest.edge2.obs.assembler numPacketBurstifiers 0
+par EdgeNodeTest.edge2.obs.assembler numFileBurstifiers 1
+par EdgeNodeTest.edge2.obs.disassembler typename "\"obsmodules.src.EdgeNode.OBS_BurstDisassembler\""
+scalar EdgeNodeTest.edge2.obs.disassembler "received Bursts" 88
+par EdgeNodeTest.edge2.obs typename "\"obsmodules.src.EdgeNode.OBS_EdgeInterface\""
+par EdgeNodeTest.edge2.obs displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.edge2.obs recordPcap false
+par EdgeNodeTest.edge2.obs numPcapRecorders 0
+par EdgeNodeTest.edge2.obs interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge2.obs outColours "\"\""
+par EdgeNodeTest.edge2.obs numInLambdas 1
+par EdgeNodeTest.edge2.obs numOutLambdas 1
+scalar EdgeNodeTest.edge2.obs packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.edge2.obs packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.obs packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.edge2.obs packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.edge2.ethEncap[0] typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeTest.edge2.ethEncap[0] registerProtocol true
+par EdgeNodeTest.edge2.ethEncap[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeTest.edge2.ethEncap[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.edge2.ethEncap[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.edge2.ethEncap[0] stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.edge2.ethEncap[0] pauseSent:count 0
+attr recordingmode count
+attr title "pause sent, count"
+scalar EdgeNodeTest.edge2.ethEncap[0] pauseSent:sum 0
+attr recordingmode sum
+attr title "pause sent, sum"
+scalar EdgeNodeTest.edge2.ethEncap[0] decapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EdgeNodeTest.edge2.ethEncap[0] decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EdgeNodeTest.edge2.ethEncap[0] encapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EdgeNodeTest.edge2.ethEncap[0] encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+par EdgeNodeTest.edge2 typename "\"obsmodules.src.EdgeNode.OBS_EdgeNode\""
+par EdgeNodeTest.edge2 numInLambdas 1
+par EdgeNodeTest.edge2 numOutLambdas 1
+par EdgeNodeTest.edge2 outColours "\"\""
+par EdgeNodeTest.host2.ethg$i[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.eth[0].phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeTest.host2.interfaceTable displayAddresses false
+par EdgeNodeTest.host2.cb typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.cb displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.cb forwardServiceRegistration true
+par EdgeNodeTest.host2.cb forwardProtocolRegistration true
+par EdgeNodeTest.host2.bl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.bl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.bl forwardServiceRegistration true
+par EdgeNodeTest.host2.bl forwardProtocolRegistration true
+par EdgeNodeTest.host2.ethernet typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeTest.host2.ethernet registerProtocol true
+par EdgeNodeTest.host2.ethernet interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ethernet fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2.ethernet stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.host2.ethernet stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.host2.ethernet pauseSent:count 0
+attr recordingmode count
+attr title "pause sent, count"
+scalar EdgeNodeTest.host2.ethernet pauseSent:sum 0
+attr recordingmode sum
+attr title "pause sent, sum"
+scalar EdgeNodeTest.host2.ethernet decapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EdgeNodeTest.host2.ethernet decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ethernet encapPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EdgeNodeTest.host2.ethernet encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+par EdgeNodeTest.host2.li typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.li displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.li forwardServiceRegistration true
+par EdgeNodeTest.host2.li forwardProtocolRegistration true
+par EdgeNodeTest.host2.lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par EdgeNodeTest.host2.lo[0].lo interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.lo[0].lo mtu 4470B
+attr unit B
+scalar EdgeNodeTest.host2.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EdgeNodeTest.host2.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host2.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.host2.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+par EdgeNodeTest.host2.lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par EdgeNodeTest.host2.lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.host2.lo[0] recordPcap false
+par EdgeNodeTest.host2.lo[0] numPcapRecorders 0
+par EdgeNodeTest.host2.lo[0] interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+scalar EdgeNodeTest.host2.lo[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.host2.lo[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host2.lo[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.host2.lo[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.host2.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeTest.host2.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeTest.host2.eth[0].queue packetCapacity 1000
+par EdgeNodeTest.host2.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeTest.host2.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeTest.host2.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeTest.host2.eth[0].queue bufferModule "\"\""
+scalar EdgeNodeTest.host2.eth[0].queue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue queueLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar EdgeNodeTest.host2.eth[0].queue queueBitLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar EdgeNodeTest.host2.eth[0].queue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic EdgeNodeTest.host2.eth[0].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host2.eth[0].queue outgoingPackets:count 0
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue outgoingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.host2.eth[0].queue outgoingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic EdgeNodeTest.host2.eth[0].queue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host2.eth[0].queue incomingPackets:count 0
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue incomingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic EdgeNodeTest.host2.eth[0].queue incomingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar EdgeNodeTest.host2.eth[0].queue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar EdgeNodeTest.host2.eth[0].queue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par EdgeNodeTest.host2.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeTest.host2.eth[0].mac interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeTest.host2.eth[0].mac sendRawBytes false
+par EdgeNodeTest.host2.eth[0].mac promiscuous false
+par EdgeNodeTest.host2.eth[0].mac duplexMode true
+par EdgeNodeTest.host2.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeTest.host2.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeTest.host2.eth[0].mac stopOperationTimeout 2s
+attr unit s
+scalar EdgeNodeTest.host2.eth[0].mac "simulated time" 124.3500087
+scalar EdgeNodeTest.host2.eth[0].mac full-duplex 1
+scalar EdgeNodeTest.host2.eth[0].mac "frames/sec sent" 0
+scalar EdgeNodeTest.host2.eth[0].mac "frames/sec rcvd" 0
+scalar EdgeNodeTest.host2.eth[0].mac "bits/sec sent" 0
+scalar EdgeNodeTest.host2.eth[0].mac "bits/sec rcvd" 0
+scalar EdgeNodeTest.host2.eth[0].mac "rx channel idle (%)" 100
+scalar EdgeNodeTest.host2.eth[0].mac "rx channel utilization (%)" 0
+scalar EdgeNodeTest.host2.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units received, count"
+scalar EdgeNodeTest.host2.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units received, sum"
+scalar EdgeNodeTest.host2.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "pause units sent, count"
+scalar EdgeNodeTest.host2.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr title "pause units sent, sum"
+scalar EdgeNodeTest.host2.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EdgeNodeTest.host2.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EdgeNodeTest.host2.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EdgeNodeTest.host2.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EdgeNodeTest.host2.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EdgeNodeTest.host2.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+par EdgeNodeTest.host2.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeTest.host2.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeTest.host2.eth[0] recordPcap false
+par EdgeNodeTest.host2.eth[0] numPcapRecorders 0
+par EdgeNodeTest.host2.eth[0] interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeTest.host2.eth[0] address "\"0A-AA-00-00-00-04\""
+attr mutable ""
+par EdgeNodeTest.host2.eth[0] duplexMode true
+par EdgeNodeTest.host2.eth[0] csmacdSupport false
+par EdgeNodeTest.host2.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeTest.host2.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+scalar EdgeNodeTest.host2.eth[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar EdgeNodeTest.host2.eth[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar EdgeNodeTest.host2.eth[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar EdgeNodeTest.host2.eth[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par EdgeNodeTest.host2.ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.ipv4.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeTest.host2.ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeTest.host2.ipv4.configurator interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.configurator routingTableModule "\"EdgeNodeTest.host2.ipv4.routingTable\""
+par EdgeNodeTest.host2.ipv4.configurator networkConfiguratorModule "\"configurator\""
+par EdgeNodeTest.host2.ipv4.configurator configureRoutingTable true
+par EdgeNodeTest.host2.ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeTest.host2.ipv4.routingTable interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.routingTable routerId "\"auto\""
+par EdgeNodeTest.host2.ipv4.routingTable netmaskRoutes "\"*\""
+par EdgeNodeTest.host2.ipv4.routingTable forwarding false
+par EdgeNodeTest.host2.ipv4.routingTable multicastForwarding false
+par EdgeNodeTest.host2.ipv4.routingTable useAdminDist false
+par EdgeNodeTest.host2.ipv4.routingTable routingFile "\"H2.irt\""
+par EdgeNodeTest.host2.ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeTest.host2.ipv4.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeTest.host2.ipv4.natTable config "<config/> at content:1"
+par EdgeNodeTest.host2.ipv4.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.ipv4.up forwardServiceRegistration true
+par EdgeNodeTest.host2.ipv4.up forwardProtocolRegistration true
+par EdgeNodeTest.host2.ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeTest.host2.ipv4.igmp interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.igmp routingTableModule "\"EdgeNodeTest.host2.ipv4.routingTable\""
+par EdgeNodeTest.host2.ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2.ipv4.igmp enabled true
+par EdgeNodeTest.host2.ipv4.igmp robustnessVariable 2
+par EdgeNodeTest.host2.ipv4.igmp queryInterval 125s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp startupQueryCount 2
+par EdgeNodeTest.host2.ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeTest.host2.ipv4.igmp lastMemberQueryCount 2
+par EdgeNodeTest.host2.ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeTest.host2.ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeTest.host2.ipv4.icmp interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.icmp routingTableModule "\"EdgeNodeTest.host2.ipv4.routingTable\""
+par EdgeNodeTest.host2.ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeTest.host2.ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeTest.host2.ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.ipv4.mp forwardServiceRegistration true
+par EdgeNodeTest.host2.ipv4.mp forwardProtocolRegistration true
+par EdgeNodeTest.host2.ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeTest.host2.ipv4.ip interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.ip routingTableModule "\"EdgeNodeTest.host2.ipv4.routingTable\""
+par EdgeNodeTest.host2.ipv4.ip arpModule "\"EdgeNodeTest.host2.ipv4.arp\""
+par EdgeNodeTest.host2.ipv4.ip icmpModule "\"EdgeNodeTest.host2.ipv4.icmp\""
+par EdgeNodeTest.host2.ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2.ipv4.ip timeToLive 32
+par EdgeNodeTest.host2.ipv4.ip multicastTimeToLive 32
+par EdgeNodeTest.host2.ipv4.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeTest.host2.ipv4.ip limitedBroadcast false
+par EdgeNodeTest.host2.ipv4.ip directBroadcastInterfaces "\"\""
+scalar EdgeNodeTest.host2.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EdgeNodeTest.host2.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par EdgeNodeTest.host2.ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeTest.host2.ipv4.arp interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4.arp routingTableModule "\"EdgeNodeTest.host2.ipv4.routingTable\""
+par EdgeNodeTest.host2.ipv4.arp retryTimeout 1s
+attr unit s
+par EdgeNodeTest.host2.ipv4.arp retryCount 3
+par EdgeNodeTest.host2.ipv4.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeTest.host2.ipv4.arp proxyArpInterfaces "\"\""
+scalar EdgeNodeTest.host2.ipv4.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar EdgeNodeTest.host2.ipv4.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar EdgeNodeTest.host2.ipv4.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar EdgeNodeTest.host2.ipv4.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EdgeNodeTest.host2.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EdgeNodeTest.host2.ipv4.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EdgeNodeTest.host2.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par EdgeNodeTest.host2.ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.ipv4.lp forwardServiceRegistration true
+par EdgeNodeTest.host2.ipv4.lp forwardProtocolRegistration true
+par EdgeNodeTest.host2.ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeTest.host2.ipv4 forwarding false
+par EdgeNodeTest.host2.ipv4 multicastForwarding false
+par EdgeNodeTest.host2.ipv4 interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.ipv4 displayStringTextFormat "\"%i\""
+par EdgeNodeTest.host2.nl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.nl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.nl forwardServiceRegistration true
+par EdgeNodeTest.host2.nl forwardProtocolRegistration true
+par EdgeNodeTest.host2.udp typename "\"inet.transportlayer.udp.Udp\""
+par EdgeNodeTest.host2.udp interfaceTableModule "\"EdgeNodeTest.host2.interfaceTable\""
+par EdgeNodeTest.host2.udp icmpModule "\"^.ipv4.icmp\""
+par EdgeNodeTest.host2.udp icmpv6Module "\"^.ipv6.icmpv6\""
+par EdgeNodeTest.host2.udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par EdgeNodeTest.host2.udp defaultMulticastLoop true
+scalar EdgeNodeTest.host2.udp packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar EdgeNodeTest.host2.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EdgeNodeTest.host2.udp packetSent:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar EdgeNodeTest.host2.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EdgeNodeTest.host2.udp passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EdgeNodeTest.host2.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EdgeNodeTest.host2.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+par EdgeNodeTest.host2.tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par EdgeNodeTest.host2.tcp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2.tcp advertisedWindow 7504
+par EdgeNodeTest.host2.tcp delayedAcksEnabled false
+par EdgeNodeTest.host2.tcp nagleEnabled true
+par EdgeNodeTest.host2.tcp limitedTransmitEnabled false
+par EdgeNodeTest.host2.tcp increasedIWEnabled false
+par EdgeNodeTest.host2.tcp sackSupport false
+par EdgeNodeTest.host2.tcp windowScalingSupport false
+par EdgeNodeTest.host2.tcp windowScalingFactor -1
+par EdgeNodeTest.host2.tcp timestampSupport false
+par EdgeNodeTest.host2.tcp mss 536
+par EdgeNodeTest.host2.tcp msl 120s
+attr unit s
+par EdgeNodeTest.host2.tcp tcpAlgorithmClass "\"TcpReno\""
+par EdgeNodeTest.host2.tcp useDataNotification false
+par EdgeNodeTest.host2.tcp dupthresh 3
+par EdgeNodeTest.host2.tcp initialSsthresh 4294967295
+par EdgeNodeTest.host2.tcp stopOperationExtraTime 0s
+attr unit s
+par EdgeNodeTest.host2.tcp stopOperationTimeout 2s
+attr unit s
+par EdgeNodeTest.host2.tcp ecnWillingness false
+par EdgeNodeTest.host2.tcp dctcpGamma 0.0625
+par EdgeNodeTest.host2.tn typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.tn displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.tn forwardServiceRegistration true
+par EdgeNodeTest.host2.tn forwardProtocolRegistration true
+par EdgeNodeTest.host2.at typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeTest.host2.at displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeTest.host2.at forwardServiceRegistration true
+par EdgeNodeTest.host2.at forwardProtocolRegistration true
+par EdgeNodeTest.host2 typename "\"inet.node.inet.StandardHost\""
+par EdgeNodeTest.host2 hasStatus false
+par EdgeNodeTest.host2 osgModel "\"\""
+par EdgeNodeTest.host2 osgModelColor "\"\""
+par EdgeNodeTest.host2 canvasImage "\"\""
+par EdgeNodeTest.host2 canvasImageColor "\"\""
+par EdgeNodeTest.host2 recordPcap false
+par EdgeNodeTest.host2 numPcapRecorders 0
+par EdgeNodeTest.host2 numLoInterfaces 1
+par EdgeNodeTest.host2 numWlanInterfaces 0
+par EdgeNodeTest.host2 numEthInterfaces 0
+par EdgeNodeTest.host2 numPppInterfaces 0
+par EdgeNodeTest.host2 numTunInterfaces 0
+par EdgeNodeTest.host2 numVirtInterfaces 0
+par EdgeNodeTest.host2 fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeTest.host2 hasIpv4 true
+par EdgeNodeTest.host2 hasIpv6 false
+par EdgeNodeTest.host2 hasGn false
+par EdgeNodeTest.host2 forwarding false
+par EdgeNodeTest.host2 multicastForwarding false
+par EdgeNodeTest.host2 hasUdp true
+par EdgeNodeTest.host2 hasTcp true
+par EdgeNodeTest.host2 hasSctp false
+par EdgeNodeTest.host2 numApps 0
+par EdgeNodeTest typename "\"obsmodules.Examples.EdgeNodeTest.EdgeNodeTest\""
+par EdgeNodeTest numLambdas 1
+

@@ -1,0 +1,1115 @@
+version 3
+run General-0-20250613-13:52:18-593333
+attr configname General
+attr datetime 20250613-13:52:18
+attr datetimef 20250613-135218
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network EdgeNodeExample
+attr processid 593333
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config debug-on-errors true
+config image-path ../../../inet-4.5.4/images
+config sim-time-limit 10s
+config network EdgeNodeExample
+config **.vector-recording false
+config **.scalar-recording false
+config **.ipv4.arp.arpResolutionCompleted.statistic-recording true
+config **.ipv4.arp.arpResolutionFailed.statistic-recording true
+config **.interfaceTable.displayAddresses true
+config **.lambdasEdge 1
+config **.dataRate 1Gbps
+config **.edge1.outColours "\"\""
+config **.edge2.outColours "\"\""
+config **.packetBurstifier[0].destLabel 1
+config **.packetBurstifier[1].destLabel 2
+config **.numFileBurstifiers 0
+config **.numPacketBurstifiers 2
+config **.packetBurstifier[*].timeout 0.005s
+config **.packetBurstifier[*].maxSize 125000000B
+config **.packetBurstifier[*].numPackets 1
+config **.packetBurstifier[*].minOffset 0.001s
+config **.packetBurstifier[*].maxOffset 0.002s
+config **.packetBurstifier[*].minSizeWithPadding 8B
+config **.packetBurstifier[*].overflowLastPacket true
+config **.packetBurstifier[*].cteHeader 8B
+config **.packetBurstifier[*].varHeader 1B
+config **.sender.BCPSize 16B
+config **.sender.maxSchedBurstSize 0B
+config **.sender.maxSchedBurstElems 0
+config **.sender.testing false
+config **.sender.guardTime 0.000000001s
+config **.host*.numApps 1
+config **.host*.app[*].typename UdpBasicApp
+config **.host1.app[*].destAddresses "\"host2\""
+config **.host2.app[*].destAddresses "\"host1\""
+config **.host*.app[*].messageLength 64B
+config **.host*.app[*].sendInterval 0.5s
+config **.host*.app[*].localPort 1000
+config **.host*.app[*].destPort 1000
+config **.edge*.routingTable.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.networkLayer.interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.eth[0].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.ethEncap[*].interfaceTableModule "\"^.interfaceTable\""
+config **.edge*.ppp[0].interfaceTableModule "\"^.interfaceTable\""
+config EdgeNodeExample.edge*.obs.interfaceTableModule "\"^.interfaceTable\""
+config EdgeNodeExample.edge*.obs.assembler.sender.interfaceTableModule "\"^.^.^.interfaceTable\""
+config **.cmdenv-log-level info
+config **.arp.cmdenv-log-level debug
+config **.ipv4.cmdenv-log-level trace
+config **.ipv4configurator.dumpRoutes true
+config record-eventlog true
+config allow-object-stealing-on-deletion true
+
+par EdgeNodeExample.host1.ethg$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeExample.host1.ethg$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeExample.host1.ethg$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeExample.host1.ethg$o[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par EdgeNodeExample.host1.ethg$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeExample.host1.ethg$o[0].channel per 0
+attr mutable ""
+par EdgeNodeExample.edge1.ethIO$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeExample.edge1.ethIO$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeExample.edge1.ethIO$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeExample.edge1.ethIO$o[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par EdgeNodeExample.edge1.ethIO$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeExample.edge1.ethIO$o[0].channel per 0
+attr mutable ""
+par EdgeNodeExample.host2.ethg$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeExample.host2.ethg$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeExample.host2.ethg$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeExample.host2.ethg$o[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par EdgeNodeExample.host2.ethg$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeExample.host2.ethg$o[0].channel per 0
+attr mutable ""
+par EdgeNodeExample.edge2.ethIO$o[0].channel typename "\"ned.DatarateChannel\""
+par EdgeNodeExample.edge2.ethIO$o[0].channel disabled false
+attr mutable ""
+par EdgeNodeExample.edge2.ethIO$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par EdgeNodeExample.edge2.ethIO$o[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par EdgeNodeExample.edge2.ethIO$o[0].channel ber 0
+attr mutable ""
+par EdgeNodeExample.edge2.ethIO$o[0].channel per 0
+attr mutable ""
+par EdgeNodeExample.host1.ethg$i[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.eth[0].phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeExample.host1.interfaceTable displayAddresses true
+par EdgeNodeExample.host1.cb typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.cb displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.cb forwardServiceRegistration true
+par EdgeNodeExample.host1.cb forwardProtocolRegistration true
+par EdgeNodeExample.host1.bl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.bl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.bl forwardServiceRegistration true
+par EdgeNodeExample.host1.bl forwardProtocolRegistration true
+par EdgeNodeExample.host1.ethernet typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeExample.host1.ethernet registerProtocol true
+par EdgeNodeExample.host1.ethernet interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ethernet fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.ethernet stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host1.ethernet stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host1.li typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.li displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.li forwardServiceRegistration true
+par EdgeNodeExample.host1.li forwardProtocolRegistration true
+par EdgeNodeExample.host1.lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par EdgeNodeExample.host1.lo[0].lo interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.lo[0].lo mtu 4470B
+attr unit B
+par EdgeNodeExample.host1.lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par EdgeNodeExample.host1.lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.host1.lo[0] recordPcap false
+par EdgeNodeExample.host1.lo[0] numPcapRecorders 0
+par EdgeNodeExample.host1.lo[0] interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeExample.host1.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeExample.host1.eth[0].queue packetCapacity 1000
+par EdgeNodeExample.host1.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeExample.host1.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeExample.host1.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeExample.host1.eth[0].queue bufferModule "\"\""
+par EdgeNodeExample.host1.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeExample.host1.eth[0].mac interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeExample.host1.eth[0].mac sendRawBytes false
+par EdgeNodeExample.host1.eth[0].mac promiscuous false
+par EdgeNodeExample.host1.eth[0].mac duplexMode true
+par EdgeNodeExample.host1.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeExample.host1.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host1.eth[0].mac stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host1.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeExample.host1.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.host1.eth[0] recordPcap false
+par EdgeNodeExample.host1.eth[0] numPcapRecorders 0
+par EdgeNodeExample.host1.eth[0] interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeExample.host1.eth[0] address "\"0A-AA-00-00-00-01\""
+attr mutable ""
+par EdgeNodeExample.host1.eth[0] duplexMode true
+par EdgeNodeExample.host1.eth[0] csmacdSupport false
+par EdgeNodeExample.host1.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeExample.host1.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.ipv4.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host1.ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeExample.host1.ipv4.configurator interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.configurator routingTableModule "\"EdgeNodeExample.host1.ipv4.routingTable\""
+par EdgeNodeExample.host1.ipv4.configurator networkConfiguratorModule "\"configurator\""
+par EdgeNodeExample.host1.ipv4.configurator configureRoutingTable true
+par EdgeNodeExample.host1.ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.host1.ipv4.routingTable interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.routingTable routerId "\"auto\""
+par EdgeNodeExample.host1.ipv4.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.host1.ipv4.routingTable forwarding false
+par EdgeNodeExample.host1.ipv4.routingTable multicastForwarding false
+par EdgeNodeExample.host1.ipv4.routingTable useAdminDist false
+par EdgeNodeExample.host1.ipv4.routingTable routingFile "\"H1.irt\""
+par EdgeNodeExample.host1.ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeExample.host1.ipv4.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeExample.host1.ipv4.natTable config "<config/> at content:1"
+par EdgeNodeExample.host1.ipv4.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.ipv4.up forwardServiceRegistration true
+par EdgeNodeExample.host1.ipv4.up forwardProtocolRegistration true
+par EdgeNodeExample.host1.ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeExample.host1.ipv4.igmp interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.igmp routingTableModule "\"EdgeNodeExample.host1.ipv4.routingTable\""
+par EdgeNodeExample.host1.ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.ipv4.igmp enabled true
+par EdgeNodeExample.host1.ipv4.igmp robustnessVariable 2
+par EdgeNodeExample.host1.ipv4.igmp queryInterval 125s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp startupQueryCount 2
+par EdgeNodeExample.host1.ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeExample.host1.ipv4.igmp lastMemberQueryCount 2
+par EdgeNodeExample.host1.ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeExample.host1.ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeExample.host1.ipv4.icmp interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.icmp routingTableModule "\"EdgeNodeExample.host1.ipv4.routingTable\""
+par EdgeNodeExample.host1.ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeExample.host1.ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeExample.host1.ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.ipv4.mp forwardServiceRegistration true
+par EdgeNodeExample.host1.ipv4.mp forwardProtocolRegistration true
+par EdgeNodeExample.host1.ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeExample.host1.ipv4.ip interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.ip routingTableModule "\"EdgeNodeExample.host1.ipv4.routingTable\""
+par EdgeNodeExample.host1.ipv4.ip arpModule "\"EdgeNodeExample.host1.ipv4.arp\""
+par EdgeNodeExample.host1.ipv4.ip icmpModule "\"EdgeNodeExample.host1.ipv4.icmp\""
+par EdgeNodeExample.host1.ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.ipv4.ip timeToLive 32
+par EdgeNodeExample.host1.ipv4.ip multicastTimeToLive 32
+par EdgeNodeExample.host1.ipv4.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeExample.host1.ipv4.ip limitedBroadcast false
+par EdgeNodeExample.host1.ipv4.ip directBroadcastInterfaces "\"\""
+par EdgeNodeExample.host1.ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeExample.host1.ipv4.arp interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4.arp routingTableModule "\"EdgeNodeExample.host1.ipv4.routingTable\""
+par EdgeNodeExample.host1.ipv4.arp retryTimeout 1s
+attr unit s
+par EdgeNodeExample.host1.ipv4.arp retryCount 3
+par EdgeNodeExample.host1.ipv4.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeExample.host1.ipv4.arp proxyArpInterfaces "\"\""
+par EdgeNodeExample.host1.ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.ipv4.lp forwardServiceRegistration true
+par EdgeNodeExample.host1.ipv4.lp forwardProtocolRegistration true
+par EdgeNodeExample.host1.ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeExample.host1.ipv4 forwarding false
+par EdgeNodeExample.host1.ipv4 multicastForwarding false
+par EdgeNodeExample.host1.ipv4 interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.ipv4 displayStringTextFormat "\"%i\""
+par EdgeNodeExample.host1.nl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.nl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.nl forwardServiceRegistration true
+par EdgeNodeExample.host1.nl forwardProtocolRegistration true
+par EdgeNodeExample.host1.udp typename "\"inet.transportlayer.udp.Udp\""
+par EdgeNodeExample.host1.udp interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.udp icmpModule "\"^.ipv4.icmp\""
+par EdgeNodeExample.host1.udp icmpv6Module "\"^.ipv6.icmpv6\""
+par EdgeNodeExample.host1.udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par EdgeNodeExample.host1.udp defaultMulticastLoop true
+par EdgeNodeExample.host1.tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par EdgeNodeExample.host1.tcp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1.tcp advertisedWindow 7504
+par EdgeNodeExample.host1.tcp delayedAcksEnabled false
+par EdgeNodeExample.host1.tcp nagleEnabled true
+par EdgeNodeExample.host1.tcp limitedTransmitEnabled false
+par EdgeNodeExample.host1.tcp increasedIWEnabled false
+par EdgeNodeExample.host1.tcp sackSupport false
+par EdgeNodeExample.host1.tcp windowScalingSupport false
+par EdgeNodeExample.host1.tcp windowScalingFactor -1
+par EdgeNodeExample.host1.tcp timestampSupport false
+par EdgeNodeExample.host1.tcp mss 536
+par EdgeNodeExample.host1.tcp msl 120s
+attr unit s
+par EdgeNodeExample.host1.tcp tcpAlgorithmClass "\"TcpReno\""
+par EdgeNodeExample.host1.tcp useDataNotification false
+par EdgeNodeExample.host1.tcp dupthresh 3
+par EdgeNodeExample.host1.tcp initialSsthresh 4294967295
+par EdgeNodeExample.host1.tcp stopOperationExtraTime 0s
+attr unit s
+par EdgeNodeExample.host1.tcp stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host1.tcp ecnWillingness false
+par EdgeNodeExample.host1.tcp dctcpGamma 0.0625
+par EdgeNodeExample.host1.tn typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.tn displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.tn forwardServiceRegistration true
+par EdgeNodeExample.host1.tn forwardProtocolRegistration true
+par EdgeNodeExample.host1.app[0] typename "\"inet.applications.udpapp.UdpBasicApp\""
+par EdgeNodeExample.host1.app[0] interfaceTableModule "\"EdgeNodeExample.host1.interfaceTable\""
+par EdgeNodeExample.host1.app[0] clockModule "\"\""
+par EdgeNodeExample.host1.app[0] localPort 1000
+par EdgeNodeExample.host1.app[0] destAddresses "\"host2\""
+par EdgeNodeExample.host1.app[0] localAddress "\"\""
+par EdgeNodeExample.host1.app[0] packetName "\"UdpBasicAppData\""
+par EdgeNodeExample.host1.app[0] destPort 1000
+par EdgeNodeExample.host1.app[0] messageLength 64B
+attr unit B
+par EdgeNodeExample.host1.app[0] startTime 0.5s
+attr unit s
+par EdgeNodeExample.host1.app[0] stopTime -1s
+attr unit s
+par EdgeNodeExample.host1.app[0] sendInterval 0.5s
+attr unit s
+par EdgeNodeExample.host1.app[0] timeToLive -1
+par EdgeNodeExample.host1.app[0] dontFragment false
+par EdgeNodeExample.host1.app[0] dscp -1
+par EdgeNodeExample.host1.app[0] tos -1
+par EdgeNodeExample.host1.app[0] multicastInterface "\"\""
+par EdgeNodeExample.host1.app[0] receiveBroadcast false
+par EdgeNodeExample.host1.app[0] joinLocalMulticastGroups false
+par EdgeNodeExample.host1.app[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host1.app[0] stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host1.at typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host1.at displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host1.at forwardServiceRegistration true
+par EdgeNodeExample.host1.at forwardProtocolRegistration true
+par EdgeNodeExample.host1 typename "\"inet.node.inet.StandardHost\""
+par EdgeNodeExample.host1 hasStatus false
+par EdgeNodeExample.host1 osgModel "\"\""
+par EdgeNodeExample.host1 osgModelColor "\"\""
+par EdgeNodeExample.host1 canvasImage "\"\""
+par EdgeNodeExample.host1 canvasImageColor "\"\""
+par EdgeNodeExample.host1 recordPcap false
+par EdgeNodeExample.host1 numPcapRecorders 0
+par EdgeNodeExample.host1 numLoInterfaces 1
+par EdgeNodeExample.host1 numWlanInterfaces 0
+par EdgeNodeExample.host1 numEthInterfaces 0
+par EdgeNodeExample.host1 numPppInterfaces 0
+par EdgeNodeExample.host1 numTunInterfaces 0
+par EdgeNodeExample.host1 numVirtInterfaces 0
+par EdgeNodeExample.host1 fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host1 hasIpv4 true
+par EdgeNodeExample.host1 hasIpv6 false
+par EdgeNodeExample.host1 hasGn false
+par EdgeNodeExample.host1 forwarding false
+par EdgeNodeExample.host1 multicastForwarding false
+par EdgeNodeExample.host1 hasUdp true
+par EdgeNodeExample.host1 hasTcp true
+par EdgeNodeExample.host1 hasSctp false
+par EdgeNodeExample.host1 numApps 1
+par EdgeNodeExample.host2.ethg$i[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.eth[0].phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeExample.host2.interfaceTable displayAddresses true
+par EdgeNodeExample.host2.cb typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.cb displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.cb forwardServiceRegistration true
+par EdgeNodeExample.host2.cb forwardProtocolRegistration true
+par EdgeNodeExample.host2.bl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.bl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.bl forwardServiceRegistration true
+par EdgeNodeExample.host2.bl forwardProtocolRegistration true
+par EdgeNodeExample.host2.ethernet typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeExample.host2.ethernet registerProtocol true
+par EdgeNodeExample.host2.ethernet interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ethernet fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.ethernet stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host2.ethernet stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host2.li typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.li displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.li forwardServiceRegistration true
+par EdgeNodeExample.host2.li forwardProtocolRegistration true
+par EdgeNodeExample.host2.lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par EdgeNodeExample.host2.lo[0].lo interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.lo[0].lo mtu 4470B
+attr unit B
+par EdgeNodeExample.host2.lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par EdgeNodeExample.host2.lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.host2.lo[0] recordPcap false
+par EdgeNodeExample.host2.lo[0] numPcapRecorders 0
+par EdgeNodeExample.host2.lo[0] interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeExample.host2.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeExample.host2.eth[0].queue packetCapacity 1000
+par EdgeNodeExample.host2.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeExample.host2.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeExample.host2.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeExample.host2.eth[0].queue bufferModule "\"\""
+par EdgeNodeExample.host2.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeExample.host2.eth[0].mac interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeExample.host2.eth[0].mac sendRawBytes false
+par EdgeNodeExample.host2.eth[0].mac promiscuous false
+par EdgeNodeExample.host2.eth[0].mac duplexMode true
+par EdgeNodeExample.host2.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeExample.host2.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host2.eth[0].mac stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host2.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeExample.host2.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.host2.eth[0] recordPcap false
+par EdgeNodeExample.host2.eth[0] numPcapRecorders 0
+par EdgeNodeExample.host2.eth[0] interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeExample.host2.eth[0] address "\"0A-AA-00-00-00-02\""
+attr mutable ""
+par EdgeNodeExample.host2.eth[0] duplexMode true
+par EdgeNodeExample.host2.eth[0] csmacdSupport false
+par EdgeNodeExample.host2.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeExample.host2.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.ipv4.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.host2.ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeExample.host2.ipv4.configurator interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.configurator routingTableModule "\"EdgeNodeExample.host2.ipv4.routingTable\""
+par EdgeNodeExample.host2.ipv4.configurator networkConfiguratorModule "\"configurator\""
+par EdgeNodeExample.host2.ipv4.configurator configureRoutingTable true
+par EdgeNodeExample.host2.ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.host2.ipv4.routingTable interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.routingTable routerId "\"auto\""
+par EdgeNodeExample.host2.ipv4.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.host2.ipv4.routingTable forwarding false
+par EdgeNodeExample.host2.ipv4.routingTable multicastForwarding false
+par EdgeNodeExample.host2.ipv4.routingTable useAdminDist false
+par EdgeNodeExample.host2.ipv4.routingTable routingFile "\"H2.irt\""
+par EdgeNodeExample.host2.ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeExample.host2.ipv4.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeExample.host2.ipv4.natTable config "<config/> at content:1"
+par EdgeNodeExample.host2.ipv4.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.ipv4.up forwardServiceRegistration true
+par EdgeNodeExample.host2.ipv4.up forwardProtocolRegistration true
+par EdgeNodeExample.host2.ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeExample.host2.ipv4.igmp interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.igmp routingTableModule "\"EdgeNodeExample.host2.ipv4.routingTable\""
+par EdgeNodeExample.host2.ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.ipv4.igmp enabled true
+par EdgeNodeExample.host2.ipv4.igmp robustnessVariable 2
+par EdgeNodeExample.host2.ipv4.igmp queryInterval 125s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp startupQueryCount 2
+par EdgeNodeExample.host2.ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeExample.host2.ipv4.igmp lastMemberQueryCount 2
+par EdgeNodeExample.host2.ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeExample.host2.ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeExample.host2.ipv4.icmp interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.icmp routingTableModule "\"EdgeNodeExample.host2.ipv4.routingTable\""
+par EdgeNodeExample.host2.ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeExample.host2.ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeExample.host2.ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.ipv4.mp forwardServiceRegistration true
+par EdgeNodeExample.host2.ipv4.mp forwardProtocolRegistration true
+par EdgeNodeExample.host2.ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeExample.host2.ipv4.ip interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.ip routingTableModule "\"EdgeNodeExample.host2.ipv4.routingTable\""
+par EdgeNodeExample.host2.ipv4.ip arpModule "\"EdgeNodeExample.host2.ipv4.arp\""
+par EdgeNodeExample.host2.ipv4.ip icmpModule "\"EdgeNodeExample.host2.ipv4.icmp\""
+par EdgeNodeExample.host2.ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.ipv4.ip timeToLive 32
+par EdgeNodeExample.host2.ipv4.ip multicastTimeToLive 32
+par EdgeNodeExample.host2.ipv4.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeExample.host2.ipv4.ip limitedBroadcast false
+par EdgeNodeExample.host2.ipv4.ip directBroadcastInterfaces "\"\""
+par EdgeNodeExample.host2.ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeExample.host2.ipv4.arp interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4.arp routingTableModule "\"EdgeNodeExample.host2.ipv4.routingTable\""
+par EdgeNodeExample.host2.ipv4.arp retryTimeout 1s
+attr unit s
+par EdgeNodeExample.host2.ipv4.arp retryCount 3
+par EdgeNodeExample.host2.ipv4.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeExample.host2.ipv4.arp proxyArpInterfaces "\"\""
+par EdgeNodeExample.host2.ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.ipv4.lp forwardServiceRegistration true
+par EdgeNodeExample.host2.ipv4.lp forwardProtocolRegistration true
+par EdgeNodeExample.host2.ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeExample.host2.ipv4 forwarding false
+par EdgeNodeExample.host2.ipv4 multicastForwarding false
+par EdgeNodeExample.host2.ipv4 interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.ipv4 displayStringTextFormat "\"%i\""
+par EdgeNodeExample.host2.nl typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.nl displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.nl forwardServiceRegistration true
+par EdgeNodeExample.host2.nl forwardProtocolRegistration true
+par EdgeNodeExample.host2.udp typename "\"inet.transportlayer.udp.Udp\""
+par EdgeNodeExample.host2.udp interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.udp icmpModule "\"^.ipv4.icmp\""
+par EdgeNodeExample.host2.udp icmpv6Module "\"^.ipv6.icmpv6\""
+par EdgeNodeExample.host2.udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par EdgeNodeExample.host2.udp defaultMulticastLoop true
+par EdgeNodeExample.host2.tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par EdgeNodeExample.host2.tcp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2.tcp advertisedWindow 7504
+par EdgeNodeExample.host2.tcp delayedAcksEnabled false
+par EdgeNodeExample.host2.tcp nagleEnabled true
+par EdgeNodeExample.host2.tcp limitedTransmitEnabled false
+par EdgeNodeExample.host2.tcp increasedIWEnabled false
+par EdgeNodeExample.host2.tcp sackSupport false
+par EdgeNodeExample.host2.tcp windowScalingSupport false
+par EdgeNodeExample.host2.tcp windowScalingFactor -1
+par EdgeNodeExample.host2.tcp timestampSupport false
+par EdgeNodeExample.host2.tcp mss 536
+par EdgeNodeExample.host2.tcp msl 120s
+attr unit s
+par EdgeNodeExample.host2.tcp tcpAlgorithmClass "\"TcpReno\""
+par EdgeNodeExample.host2.tcp useDataNotification false
+par EdgeNodeExample.host2.tcp dupthresh 3
+par EdgeNodeExample.host2.tcp initialSsthresh 4294967295
+par EdgeNodeExample.host2.tcp stopOperationExtraTime 0s
+attr unit s
+par EdgeNodeExample.host2.tcp stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host2.tcp ecnWillingness false
+par EdgeNodeExample.host2.tcp dctcpGamma 0.0625
+par EdgeNodeExample.host2.tn typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.tn displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.tn forwardServiceRegistration true
+par EdgeNodeExample.host2.tn forwardProtocolRegistration true
+par EdgeNodeExample.host2.app[0] typename "\"inet.applications.udpapp.UdpBasicApp\""
+par EdgeNodeExample.host2.app[0] interfaceTableModule "\"EdgeNodeExample.host2.interfaceTable\""
+par EdgeNodeExample.host2.app[0] clockModule "\"\""
+par EdgeNodeExample.host2.app[0] localPort 1000
+par EdgeNodeExample.host2.app[0] destAddresses "\"host1\""
+par EdgeNodeExample.host2.app[0] localAddress "\"\""
+par EdgeNodeExample.host2.app[0] packetName "\"UdpBasicAppData\""
+par EdgeNodeExample.host2.app[0] destPort 1000
+par EdgeNodeExample.host2.app[0] messageLength 64B
+attr unit B
+par EdgeNodeExample.host2.app[0] startTime 0.5s
+attr unit s
+par EdgeNodeExample.host2.app[0] stopTime -1s
+attr unit s
+par EdgeNodeExample.host2.app[0] sendInterval 0.5s
+attr unit s
+par EdgeNodeExample.host2.app[0] timeToLive -1
+par EdgeNodeExample.host2.app[0] dontFragment false
+par EdgeNodeExample.host2.app[0] dscp -1
+par EdgeNodeExample.host2.app[0] tos -1
+par EdgeNodeExample.host2.app[0] multicastInterface "\"\""
+par EdgeNodeExample.host2.app[0] receiveBroadcast false
+par EdgeNodeExample.host2.app[0] joinLocalMulticastGroups false
+par EdgeNodeExample.host2.app[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.host2.app[0] stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.host2.at typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.host2.at displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.host2.at forwardServiceRegistration true
+par EdgeNodeExample.host2.at forwardProtocolRegistration true
+par EdgeNodeExample.host2 typename "\"inet.node.inet.StandardHost\""
+par EdgeNodeExample.host2 hasStatus false
+par EdgeNodeExample.host2 osgModel "\"\""
+par EdgeNodeExample.host2 osgModelColor "\"\""
+par EdgeNodeExample.host2 canvasImage "\"\""
+par EdgeNodeExample.host2 canvasImageColor "\"\""
+par EdgeNodeExample.host2 recordPcap false
+par EdgeNodeExample.host2 numPcapRecorders 0
+par EdgeNodeExample.host2 numLoInterfaces 1
+par EdgeNodeExample.host2 numWlanInterfaces 0
+par EdgeNodeExample.host2 numEthInterfaces 0
+par EdgeNodeExample.host2 numPppInterfaces 0
+par EdgeNodeExample.host2 numTunInterfaces 0
+par EdgeNodeExample.host2 numVirtInterfaces 0
+par EdgeNodeExample.host2 fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.host2 hasIpv4 true
+par EdgeNodeExample.host2 hasIpv6 false
+par EdgeNodeExample.host2 hasGn false
+par EdgeNodeExample.host2 forwarding false
+par EdgeNodeExample.host2 multicastForwarding false
+par EdgeNodeExample.host2 hasUdp true
+par EdgeNodeExample.host2 hasTcp true
+par EdgeNodeExample.host2 hasSctp false
+par EdgeNodeExample.host2 numApps 1
+par EdgeNodeExample.edge1.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeExample.edge1.interfaceTable displayAddresses true
+par EdgeNodeExample.edge1.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.edge1.routingTable interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge1.routingTable routerId "\"auto\""
+par EdgeNodeExample.edge1.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.edge1.routingTable forwarding true
+par EdgeNodeExample.edge1.routingTable multicastForwarding false
+par EdgeNodeExample.edge1.routingTable useAdminDist false
+par EdgeNodeExample.edge1.routingTable routingFile "\"Edge1.irt\""
+par EdgeNodeExample.edge1.networkLayer.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.lp.out[3].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.ifInV[1].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.networkLayer.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeExample.edge1.networkLayer.configurator interfaceTableModule "\"EdgeNodeExample.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.configurator routingTableModule "\"EdgeNodeExample.edge1.networkLayer.routingTable\""
+par EdgeNodeExample.edge1.networkLayer.configurator networkConfiguratorModule "\"^.^.ipv4configurator\""
+par EdgeNodeExample.edge1.networkLayer.configurator configureRoutingTable true
+par EdgeNodeExample.edge1.networkLayer.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.edge1.networkLayer.routingTable interfaceTableModule "\"EdgeNodeExample.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.routingTable routerId "\"auto\""
+par EdgeNodeExample.edge1.networkLayer.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.edge1.networkLayer.routingTable forwarding true
+par EdgeNodeExample.edge1.networkLayer.routingTable multicastForwarding false
+par EdgeNodeExample.edge1.networkLayer.routingTable useAdminDist false
+par EdgeNodeExample.edge1.networkLayer.routingTable routingFile "\"\""
+par EdgeNodeExample.edge1.networkLayer.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeExample.edge1.networkLayer.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeExample.edge1.networkLayer.natTable config "<config/> at content:1"
+par EdgeNodeExample.edge1.networkLayer.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge1.networkLayer.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge1.networkLayer.up forwardServiceRegistration true
+par EdgeNodeExample.edge1.networkLayer.up forwardProtocolRegistration true
+par EdgeNodeExample.edge1.networkLayer.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeExample.edge1.networkLayer.igmp interfaceTableModule "\"EdgeNodeExample.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.igmp routingTableModule "\"EdgeNodeExample.edge1.networkLayer.routingTable\""
+par EdgeNodeExample.edge1.networkLayer.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge1.networkLayer.igmp enabled true
+par EdgeNodeExample.edge1.networkLayer.igmp robustnessVariable 2
+par EdgeNodeExample.edge1.networkLayer.igmp queryInterval 125s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp startupQueryCount 2
+par EdgeNodeExample.edge1.networkLayer.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.igmp lastMemberQueryCount 2
+par EdgeNodeExample.edge1.networkLayer.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeExample.edge1.networkLayer.icmp interfaceTableModule "\"EdgeNodeExample.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.icmp routingTableModule "\"EdgeNodeExample.edge1.networkLayer.routingTable\""
+par EdgeNodeExample.edge1.networkLayer.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeExample.edge1.networkLayer.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeExample.edge1.networkLayer.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge1.networkLayer.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge1.networkLayer.mp forwardServiceRegistration true
+par EdgeNodeExample.edge1.networkLayer.mp forwardProtocolRegistration true
+par EdgeNodeExample.edge1.networkLayer.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeExample.edge1.networkLayer.ip interfaceTableModule "\"^.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.ip routingTableModule "\"^.^.routingTable\""
+par EdgeNodeExample.edge1.networkLayer.ip arpModule "\"EdgeNodeExample.edge1.networkLayer.arp\""
+par EdgeNodeExample.edge1.networkLayer.ip icmpModule "\"EdgeNodeExample.edge1.networkLayer.icmp\""
+par EdgeNodeExample.edge1.networkLayer.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge1.networkLayer.ip timeToLive 32
+par EdgeNodeExample.edge1.networkLayer.ip multicastTimeToLive 32
+par EdgeNodeExample.edge1.networkLayer.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.ip limitedBroadcast false
+par EdgeNodeExample.edge1.networkLayer.ip directBroadcastInterfaces "\"\""
+par EdgeNodeExample.edge1.networkLayer.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeExample.edge1.networkLayer.arp interfaceTableModule "\"EdgeNodeExample.edge1.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer.arp routingTableModule "\"EdgeNodeExample.edge1.networkLayer.routingTable\""
+par EdgeNodeExample.edge1.networkLayer.arp retryTimeout 1s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.arp retryCount 3
+par EdgeNodeExample.edge1.networkLayer.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeExample.edge1.networkLayer.arp proxyArpInterfaces "\"*\""
+par EdgeNodeExample.edge1.networkLayer.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge1.networkLayer.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge1.networkLayer.lp forwardServiceRegistration true
+par EdgeNodeExample.edge1.networkLayer.lp forwardProtocolRegistration true
+par EdgeNodeExample.edge1.networkLayer typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeExample.edge1.networkLayer forwarding true
+par EdgeNodeExample.edge1.networkLayer multicastForwarding false
+par EdgeNodeExample.edge1.networkLayer interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge1.networkLayer displayStringTextFormat "\"%i\""
+par EdgeNodeExample.edge1.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge1.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeExample.edge1.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeExample.edge1.eth[0].queue packetCapacity 1000
+par EdgeNodeExample.edge1.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeExample.edge1.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeExample.edge1.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeExample.edge1.eth[0].queue bufferModule "\"\""
+par EdgeNodeExample.edge1.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeExample.edge1.eth[0].mac interfaceTableModule "\"EdgeNodeExample.edge1.eth[0].^.interfaceTable\""
+par EdgeNodeExample.edge1.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeExample.edge1.eth[0].mac sendRawBytes false
+par EdgeNodeExample.edge1.eth[0].mac promiscuous false
+par EdgeNodeExample.edge1.eth[0].mac duplexMode true
+par EdgeNodeExample.edge1.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeExample.edge1.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge1.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.edge1.eth[0].mac stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.edge1.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeExample.edge1.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.edge1.eth[0] recordPcap false
+par EdgeNodeExample.edge1.eth[0] numPcapRecorders 0
+par EdgeNodeExample.edge1.eth[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge1.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeExample.edge1.eth[0] address "\"0A-AA-00-00-00-03\""
+attr mutable ""
+par EdgeNodeExample.edge1.eth[0] duplexMode true
+par EdgeNodeExample.edge1.eth[0] csmacdSupport false
+par EdgeNodeExample.edge1.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeExample.edge1.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge1.obs.assembler.dispatcher typename "\"obsmodules.src.EdgeNode.OBS_PacketDispatcher\""
+par EdgeNodeExample.edge1.obs.assembler.dispatcher numQueues 2
+par EdgeNodeExample.edge1.obs.assembler.dispatcher dispatcherRules "\"DispatcherRules.dat\""
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] typename "\"obsmodules.src.EdgeNode.OBS_PacketBurstifier\""
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] timeout 0.005s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] maxSize 125000000B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] numPackets 1
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] minOffset 0.001s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] maxOffset 0.002s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] minSizeWithPadding 8B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] overflowLastPacket true
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] cteHeader 8B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] varHeader 1B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[0] destLabel 1
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] typename "\"obsmodules.src.EdgeNode.OBS_PacketBurstifier\""
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] timeout 0.005s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] maxSize 125000000B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] numPackets 1
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] minOffset 0.001s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] maxOffset 0.002s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] minSizeWithPadding 8B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] overflowLastPacket true
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] cteHeader 8B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] varHeader 1B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.packetBurstifier[1] destLabel 2
+par EdgeNodeExample.edge1.obs.assembler.sender typename "\"obsmodules.src.EdgeNode.OBS_BurstSender\""
+par EdgeNodeExample.edge1.obs.assembler.sender interfaceTableModule "\"^.^.^.interfaceTable\""
+par EdgeNodeExample.edge1.obs.assembler.sender colours "\"\""
+par EdgeNodeExample.edge1.obs.assembler.sender numLambdas 1
+par EdgeNodeExample.edge1.obs.assembler.sender dataRate 1e+09bps
+attr unit bps
+par EdgeNodeExample.edge1.obs.assembler.sender BCPSize 16B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.sender maxSchedBurstSize 0B
+attr unit B
+par EdgeNodeExample.edge1.obs.assembler.sender maxSchedBurstElems 0
+par EdgeNodeExample.edge1.obs.assembler.sender guardTime 1e-09s
+attr unit s
+par EdgeNodeExample.edge1.obs.assembler.sender testing false
+par EdgeNodeExample.edge1.obs.assembler typename "\"obsmodules.src.EdgeNode.OBS_BurstAssembler\""
+par EdgeNodeExample.edge1.obs.assembler colours "\"\""
+par EdgeNodeExample.edge1.obs.assembler numLambdas 1
+par EdgeNodeExample.edge1.obs.assembler numPacketBurstifiers 2
+par EdgeNodeExample.edge1.obs.assembler numFileBurstifiers 0
+par EdgeNodeExample.edge1.obs.disassembler typename "\"obsmodules.src.EdgeNode.OBS_BurstDisassembler\""
+par EdgeNodeExample.edge1.obs typename "\"obsmodules.src.EdgeNode.OBS_EdgeInterface\""
+par EdgeNodeExample.edge1.obs displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.edge1.obs recordPcap false
+par EdgeNodeExample.edge1.obs numPcapRecorders 0
+par EdgeNodeExample.edge1.obs interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge1.obs outColours "\"\""
+par EdgeNodeExample.edge1.obs numInLambdas 1
+par EdgeNodeExample.edge1.obs numOutLambdas 1
+par EdgeNodeExample.edge1.ethEncap[0] typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeExample.edge1.ethEncap[0] registerProtocol true
+par EdgeNodeExample.edge1.ethEncap[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge1.ethEncap[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge1.ethEncap[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.edge1.ethEncap[0] stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.edge1 typename "\"obsmodules.src.EdgeNode.OBS_EdgeNode\""
+par EdgeNodeExample.edge1 numInLambdas 1
+par EdgeNodeExample.edge1 numOutLambdas 1
+par EdgeNodeExample.edge1 outColours "\"\""
+par EdgeNodeExample.edge2.interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par EdgeNodeExample.edge2.interfaceTable displayAddresses true
+par EdgeNodeExample.edge2.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.edge2.routingTable interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge2.routingTable routerId "\"auto\""
+par EdgeNodeExample.edge2.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.edge2.routingTable forwarding true
+par EdgeNodeExample.edge2.routingTable multicastForwarding false
+par EdgeNodeExample.edge2.routingTable useAdminDist false
+par EdgeNodeExample.edge2.routingTable routingFile "\"Edge2.irt\""
+par EdgeNodeExample.edge2.networkLayer.transportIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.up.out[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.lp.out[2].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.lp.out[3].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.ifInV[0].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.ifInV[1].channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.networkLayer.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par EdgeNodeExample.edge2.networkLayer.configurator interfaceTableModule "\"EdgeNodeExample.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.configurator routingTableModule "\"EdgeNodeExample.edge2.networkLayer.routingTable\""
+par EdgeNodeExample.edge2.networkLayer.configurator networkConfiguratorModule "\"^.^.ipv4configurator\""
+par EdgeNodeExample.edge2.networkLayer.configurator configureRoutingTable true
+par EdgeNodeExample.edge2.networkLayer.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par EdgeNodeExample.edge2.networkLayer.routingTable interfaceTableModule "\"EdgeNodeExample.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.routingTable routerId "\"auto\""
+par EdgeNodeExample.edge2.networkLayer.routingTable netmaskRoutes "\"*\""
+par EdgeNodeExample.edge2.networkLayer.routingTable forwarding true
+par EdgeNodeExample.edge2.networkLayer.routingTable multicastForwarding false
+par EdgeNodeExample.edge2.networkLayer.routingTable useAdminDist false
+par EdgeNodeExample.edge2.networkLayer.routingTable routingFile "\"\""
+par EdgeNodeExample.edge2.networkLayer.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par EdgeNodeExample.edge2.networkLayer.natTable networkProtocolModule "\"^.ip\""
+par EdgeNodeExample.edge2.networkLayer.natTable config "<config/> at content:1"
+par EdgeNodeExample.edge2.networkLayer.up typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge2.networkLayer.up displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge2.networkLayer.up forwardServiceRegistration true
+par EdgeNodeExample.edge2.networkLayer.up forwardProtocolRegistration true
+par EdgeNodeExample.edge2.networkLayer.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par EdgeNodeExample.edge2.networkLayer.igmp interfaceTableModule "\"EdgeNodeExample.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.igmp routingTableModule "\"EdgeNodeExample.edge2.networkLayer.routingTable\""
+par EdgeNodeExample.edge2.networkLayer.igmp crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge2.networkLayer.igmp enabled true
+par EdgeNodeExample.edge2.networkLayer.igmp robustnessVariable 2
+par EdgeNodeExample.edge2.networkLayer.igmp queryInterval 125s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp queryResponseInterval 10s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp groupMembershipInterval 260s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp otherQuerierPresentInterval 255s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp startupQueryInterval 31.25s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp startupQueryCount 2
+par EdgeNodeExample.edge2.networkLayer.igmp lastMemberQueryInterval 1s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.igmp lastMemberQueryCount 2
+par EdgeNodeExample.edge2.networkLayer.igmp unsolicitedReportInterval 10s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par EdgeNodeExample.edge2.networkLayer.icmp interfaceTableModule "\"EdgeNodeExample.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.icmp routingTableModule "\"EdgeNodeExample.edge2.networkLayer.routingTable\""
+par EdgeNodeExample.edge2.networkLayer.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par EdgeNodeExample.edge2.networkLayer.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par EdgeNodeExample.edge2.networkLayer.mp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge2.networkLayer.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge2.networkLayer.mp forwardServiceRegistration true
+par EdgeNodeExample.edge2.networkLayer.mp forwardProtocolRegistration true
+par EdgeNodeExample.edge2.networkLayer.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par EdgeNodeExample.edge2.networkLayer.ip interfaceTableModule "\"^.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.ip routingTableModule "\"^.^.routingTable\""
+par EdgeNodeExample.edge2.networkLayer.ip arpModule "\"EdgeNodeExample.edge2.networkLayer.arp\""
+par EdgeNodeExample.edge2.networkLayer.ip icmpModule "\"EdgeNodeExample.edge2.networkLayer.icmp\""
+par EdgeNodeExample.edge2.networkLayer.ip crcMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge2.networkLayer.ip timeToLive 32
+par EdgeNodeExample.edge2.networkLayer.ip multicastTimeToLive 32
+par EdgeNodeExample.edge2.networkLayer.ip fragmentTimeout 60s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.ip limitedBroadcast false
+par EdgeNodeExample.edge2.networkLayer.ip directBroadcastInterfaces "\"\""
+par EdgeNodeExample.edge2.networkLayer.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par EdgeNodeExample.edge2.networkLayer.arp interfaceTableModule "\"EdgeNodeExample.edge2.networkLayer.^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer.arp routingTableModule "\"EdgeNodeExample.edge2.networkLayer.routingTable\""
+par EdgeNodeExample.edge2.networkLayer.arp retryTimeout 1s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.arp retryCount 3
+par EdgeNodeExample.edge2.networkLayer.arp cacheTimeout 120s
+attr unit s
+par EdgeNodeExample.edge2.networkLayer.arp proxyArpInterfaces "\"*\""
+par EdgeNodeExample.edge2.networkLayer.lp typename "\"inet.common.MessageDispatcher\""
+par EdgeNodeExample.edge2.networkLayer.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par EdgeNodeExample.edge2.networkLayer.lp forwardServiceRegistration true
+par EdgeNodeExample.edge2.networkLayer.lp forwardProtocolRegistration true
+par EdgeNodeExample.edge2.networkLayer typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par EdgeNodeExample.edge2.networkLayer forwarding true
+par EdgeNodeExample.edge2.networkLayer multicastForwarding false
+par EdgeNodeExample.edge2.networkLayer interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge2.networkLayer displayStringTextFormat "\"%i\""
+par EdgeNodeExample.edge2.eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.eth[0].phys$i.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.eth[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.eth[0].mac.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par EdgeNodeExample.edge2.eth[0].queue typename "\"inet.linklayer.ethernet.common.EthernetQueue\""
+par EdgeNodeExample.edge2.eth[0].queue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par EdgeNodeExample.edge2.eth[0].queue packetCapacity 1000
+par EdgeNodeExample.edge2.eth[0].queue dataCapacity -1b
+attr unit b
+par EdgeNodeExample.edge2.eth[0].queue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par EdgeNodeExample.edge2.eth[0].queue comparatorClass "\"inet::EthernetFrameTypeComparator\""
+par EdgeNodeExample.edge2.eth[0].queue bufferModule "\"\""
+par EdgeNodeExample.edge2.eth[0].mac typename "\"inet.linklayer.ethernet.basic.EthernetMac\""
+par EdgeNodeExample.edge2.eth[0].mac interfaceTableModule "\"EdgeNodeExample.edge2.eth[0].^.interfaceTable\""
+par EdgeNodeExample.edge2.eth[0].mac displayStringTextFormat "\"rate: %b\\nsent: %s, rcvd: %r\\nqueue: %q, drop: %d\""
+par EdgeNodeExample.edge2.eth[0].mac sendRawBytes false
+par EdgeNodeExample.edge2.eth[0].mac promiscuous false
+par EdgeNodeExample.edge2.eth[0].mac duplexMode true
+par EdgeNodeExample.edge2.eth[0].mac mtu 1500B
+attr unit B
+par EdgeNodeExample.edge2.eth[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge2.eth[0].mac stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.edge2.eth[0].mac stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.edge2.eth[0] typename "\"inet.linklayer.ethernet.EthernetInterface\""
+par EdgeNodeExample.edge2.eth[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.edge2.eth[0] recordPcap false
+par EdgeNodeExample.edge2.eth[0] numPcapRecorders 0
+par EdgeNodeExample.edge2.eth[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge2.eth[0] protocol "\"ethernetmac\""
+par EdgeNodeExample.edge2.eth[0] address "\"0A-AA-00-00-00-04\""
+attr mutable ""
+par EdgeNodeExample.edge2.eth[0] duplexMode true
+par EdgeNodeExample.edge2.eth[0] csmacdSupport false
+par EdgeNodeExample.edge2.eth[0] bitrate 0bps
+attr unit bps
+par EdgeNodeExample.edge2.eth[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge2.obs.assembler.dispatcher typename "\"obsmodules.src.EdgeNode.OBS_PacketDispatcher\""
+par EdgeNodeExample.edge2.obs.assembler.dispatcher numQueues 2
+par EdgeNodeExample.edge2.obs.assembler.dispatcher dispatcherRules "\"DispatcherRules.dat\""
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] typename "\"obsmodules.src.EdgeNode.OBS_PacketBurstifier\""
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] timeout 0.005s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] maxSize 125000000B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] numPackets 1
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] minOffset 0.001s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] maxOffset 0.002s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] minSizeWithPadding 8B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] overflowLastPacket true
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] cteHeader 8B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] varHeader 1B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[0] destLabel 1
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] typename "\"obsmodules.src.EdgeNode.OBS_PacketBurstifier\""
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] timeout 0.005s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] maxSize 125000000B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] numPackets 1
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] minOffset 0.001s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] maxOffset 0.002s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] minSizeWithPadding 8B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] overflowLastPacket true
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] cteHeader 8B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] varHeader 1B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.packetBurstifier[1] destLabel 2
+par EdgeNodeExample.edge2.obs.assembler.sender typename "\"obsmodules.src.EdgeNode.OBS_BurstSender\""
+par EdgeNodeExample.edge2.obs.assembler.sender interfaceTableModule "\"^.^.^.interfaceTable\""
+par EdgeNodeExample.edge2.obs.assembler.sender colours "\"\""
+par EdgeNodeExample.edge2.obs.assembler.sender numLambdas 1
+par EdgeNodeExample.edge2.obs.assembler.sender dataRate 1e+09bps
+attr unit bps
+par EdgeNodeExample.edge2.obs.assembler.sender BCPSize 16B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.sender maxSchedBurstSize 0B
+attr unit B
+par EdgeNodeExample.edge2.obs.assembler.sender maxSchedBurstElems 0
+par EdgeNodeExample.edge2.obs.assembler.sender guardTime 1e-09s
+attr unit s
+par EdgeNodeExample.edge2.obs.assembler.sender testing false
+par EdgeNodeExample.edge2.obs.assembler typename "\"obsmodules.src.EdgeNode.OBS_BurstAssembler\""
+par EdgeNodeExample.edge2.obs.assembler colours "\"\""
+par EdgeNodeExample.edge2.obs.assembler numLambdas 1
+par EdgeNodeExample.edge2.obs.assembler numPacketBurstifiers 2
+par EdgeNodeExample.edge2.obs.assembler numFileBurstifiers 0
+par EdgeNodeExample.edge2.obs.disassembler typename "\"obsmodules.src.EdgeNode.OBS_BurstDisassembler\""
+par EdgeNodeExample.edge2.obs typename "\"obsmodules.src.EdgeNode.OBS_EdgeInterface\""
+par EdgeNodeExample.edge2.obs displayStringTextFormat "\"%a (%i)\\n%m\""
+par EdgeNodeExample.edge2.obs recordPcap false
+par EdgeNodeExample.edge2.obs numPcapRecorders 0
+par EdgeNodeExample.edge2.obs interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge2.obs outColours "\"\""
+par EdgeNodeExample.edge2.obs numInLambdas 1
+par EdgeNodeExample.edge2.obs numOutLambdas 1
+par EdgeNodeExample.edge2.ethEncap[0] typename "\"inet.linklayer.ethernet.basic.EthernetEncapsulation\""
+par EdgeNodeExample.edge2.ethEncap[0] registerProtocol true
+par EdgeNodeExample.edge2.ethEncap[0] interfaceTableModule "\"^.interfaceTable\""
+par EdgeNodeExample.edge2.ethEncap[0] fcsMode "\"declared\""
+attr enum declared,computed
+par EdgeNodeExample.edge2.ethEncap[0] stopOperationExtraTime -1s
+attr unit s
+par EdgeNodeExample.edge2.ethEncap[0] stopOperationTimeout 2s
+attr unit s
+par EdgeNodeExample.edge2 typename "\"obsmodules.src.EdgeNode.OBS_EdgeNode\""
+par EdgeNodeExample.edge2 numInLambdas 1
+par EdgeNodeExample.edge2 numOutLambdas 1
+par EdgeNodeExample.edge2 outColours "\"\""
+par EdgeNodeExample.ipv4configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator\""
+par EdgeNodeExample.ipv4configurator minLinkWeight 0.001
+par EdgeNodeExample.ipv4configurator configureIsolatedNetworksSeparatly false
+par EdgeNodeExample.ipv4configurator config "<config>...</config> at content:1"
+par EdgeNodeExample.ipv4configurator assignAddresses true
+par EdgeNodeExample.ipv4configurator assignUniqueAddresses true
+par EdgeNodeExample.ipv4configurator assignDisjunctSubnetAddresses true
+par EdgeNodeExample.ipv4configurator addStaticRoutes true
+par EdgeNodeExample.ipv4configurator addDefaultRoutes true
+par EdgeNodeExample.ipv4configurator addSubnetRoutes true
+par EdgeNodeExample.ipv4configurator addDirectRoutes true
+par EdgeNodeExample.ipv4configurator optimizeRoutes true
+par EdgeNodeExample.ipv4configurator dumpTopology false
+par EdgeNodeExample.ipv4configurator dumpLinks false
+par EdgeNodeExample.ipv4configurator dumpAddresses false
+par EdgeNodeExample.ipv4configurator dumpRoutes true
+par EdgeNodeExample.ipv4configurator dumpConfig "\"\""
+par EdgeNodeExample typename "\"obsmodules.Examples.EdgeNodeExample.EdgeNodeExample\""
+par EdgeNodeExample lambdasEdge 1
+

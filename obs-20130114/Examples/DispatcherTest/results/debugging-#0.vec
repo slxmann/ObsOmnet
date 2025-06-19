@@ -1,0 +1,94 @@
+version 3
+run debugging-0-20250604-15:45:57-159244
+attr configname debugging
+attr datetime 20250604-15:45:57
+attr datetimef 20250604-154557
+attr experiment debugging
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DispatcherTest
+attr processid 159244
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config **.sink[0].protocol 181
+config **.sink[1].protocol 181
+config **.sink[2].protocol 181
+config network DispatcherTest
+config DispatcherTest.numQueues 3
+config DispatcherTest.rulesFile "\"DispatcherRules.dat\""
+
+vector 0 DispatcherTest.generator packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 1 DispatcherTest.generator packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 2 DispatcherTest.generator endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 3 DispatcherTest.sink[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 4 DispatcherTest.sink[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 5 DispatcherTest.sink[1] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 6 DispatcherTest.sink[1] endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 7 DispatcherTest.sink[2] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 8 DispatcherTest.sink[2] endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 9 DispatcherTest.dispatcher recvPacketSize ETV
+1	1	0	1000
+1	5	0.898560388484	1000
+1	9	2.758164600559	1000
+1	13	3.735171026952	1000
+1	17	4.220299190674	1000
+1	21	4.573458329812	1000
+3	4	0	20
+3	20	4.220299190674	20
+5	8	0.898560388484	20
+5	12	2.758164600559	20
+5	16	3.735171026952	20
+9	3	0	20
+9	7	0.898560388484	20
+9	11	2.758164600559	20
+9	15	3.735171026952	20
+9	19	4.220299190674	20
+9	23	4.573458329812	20
+

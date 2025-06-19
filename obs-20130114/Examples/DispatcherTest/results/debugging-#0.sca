@@ -1,0 +1,170 @@
+version 3
+run debugging-0-20250604-15:45:57-159244
+attr configname debugging
+attr datetime 20250604-15:45:57
+attr datetimef 20250604-154557
+attr experiment debugging
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DispatcherTest
+attr processid 159244
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config **.sink[0].protocol 181
+config **.sink[1].protocol 181
+config **.sink[2].protocol 181
+config network DispatcherTest
+config DispatcherTest.numQueues 3
+config DispatcherTest.rulesFile "\"DispatcherRules.dat\""
+
+par DispatcherTest.generator typename "\"inet.applications.generic.IpvxTrafGen\""
+par DispatcherTest.generator startTime 0s
+attr unit s
+par DispatcherTest.generator stopTime -1s
+attr unit s
+par DispatcherTest.generator sendInterval exponential(1s)
+attr unit s
+par DispatcherTest.generator numPackets 100
+par DispatcherTest.generator protocol 171
+par DispatcherTest.generator packetLength 1000B
+attr unit B
+par DispatcherTest.generator destAddresses "\"127.0.0.1 127.0.0.2 127.0.0.3\""
+scalar DispatcherTest.generator packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar DispatcherTest.generator packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DispatcherTest.generator endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar DispatcherTest.generator packetSent:count 6
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar DispatcherTest.generator packetSent:sum(packetBytes) 6000
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+par DispatcherTest.converter typename "\"obsmodules.src.tests.PacketConverter\""
+par DispatcherTest.dispatcher typename "\"obsmodules.src.EdgeNode.OBS_PacketDispatcher\""
+par DispatcherTest.dispatcher numQueues 3
+par DispatcherTest.dispatcher dispatcherRules "\"DispatcherRules.dat\""
+scalar DispatcherTest.dispatcher "Packets received" 6
+scalar DispatcherTest.dispatcher "Average packet size" 20
+scalar DispatcherTest.dispatcher "Packet size variance" 0
+scalar DispatcherTest.dispatcher "Dropped Packets" 0
+par DispatcherTest.sink[0] typename "\"inet.applications.generic.IpvxTrafSink\""
+par DispatcherTest.sink[0] protocol 181
+scalar DispatcherTest.sink[0] packetReceived:count 2
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar DispatcherTest.sink[0] packetReceived:sum(packetBytes) 40
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DispatcherTest.sink[0] endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+par DispatcherTest.sink[1] typename "\"inet.applications.generic.IpvxTrafSink\""
+par DispatcherTest.sink[1] protocol 181
+scalar DispatcherTest.sink[1] packetReceived:count 3
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar DispatcherTest.sink[1] packetReceived:sum(packetBytes) 60
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DispatcherTest.sink[1] endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+par DispatcherTest.sink[2] typename "\"inet.applications.generic.IpvxTrafSink\""
+par DispatcherTest.sink[2] protocol 181
+scalar DispatcherTest.sink[2] packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar DispatcherTest.sink[2] packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DispatcherTest.sink[2] endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+par DispatcherTest typename "\"obsmodules.Examples.DispatcherTest.DispatcherTest\""
+par DispatcherTest numQueues 3
+par DispatcherTest rulesFile "\"DispatcherRules.dat\""
+

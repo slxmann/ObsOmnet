@@ -1,0 +1,75 @@
+version 3
+run debug-0-20250616-14:59:11-2490766
+attr configname debug
+attr datetime 20250616-14:59:11
+attr datetimef 20250616-145911
+attr experiment debug
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network BurstifierTest
+attr processid 2490766
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet-4.5.4/images
+config **.burstifier.timeout 100s
+config **.burstifier.maxSize 3500B
+config **.burstifier.numPackets 41
+config **.burstifier.minOffset 0.1s
+config **.burstifier.maxOffset 0.3s
+config **.burstifier.minSizeWithPadding 3500B
+config **.burstifier.overflowLastPacket true
+config **.burstifier.cteHeader 8B
+config **.burstifier.varHeader 1B
+config **BurstifierTest.sink.protocol 171
+config **.generator.protocol 170
+config network BurstifierTest
+config **.vector-recording false
+config **.scalar-recording false
+config **.generator.startTime 0s
+config **.generator.packetInterval exponential(1s)
+config **.generator.numPackets 100000
+config **.generator.packetLength 1000B
+config **.generator.destAddresses "\"10.0.0.2\""
+config **.burstifier.destLabel 42
+
+par BurstifierTest.generator typename "\"inet.applications.generic.IpvxTrafGen\""
+par BurstifierTest.generator startTime 0s
+attr unit s
+par BurstifierTest.generator stopTime -1s
+attr unit s
+par BurstifierTest.generator sendInterval 0.01s
+attr unit s
+par BurstifierTest.generator numPackets 100000
+par BurstifierTest.generator protocol 170
+par BurstifierTest.generator packetLength 1000B
+attr unit B
+par BurstifierTest.generator destAddresses "\"10.0.0.2\""
+par BurstifierTest.converter typename "\"obsmodules.src.tests.PacketConverter\""
+par BurstifierTest.burstifier typename "\"obsmodules.src.EdgeNode.OBS_PacketBurstifier\""
+par BurstifierTest.burstifier timeout 100s
+attr unit s
+par BurstifierTest.burstifier maxSize 3500B
+attr unit B
+par BurstifierTest.burstifier numPackets 41
+par BurstifierTest.burstifier minOffset 0.1s
+attr unit s
+par BurstifierTest.burstifier maxOffset 0.3s
+attr unit s
+par BurstifierTest.burstifier minSizeWithPadding 3500B
+attr unit B
+par BurstifierTest.burstifier overflowLastPacket true
+par BurstifierTest.burstifier cteHeader 8B
+attr unit B
+par BurstifierTest.burstifier varHeader 1B
+attr unit B
+par BurstifierTest.burstifier destLabel 42
+par BurstifierTest.sink typename "\"inet.applications.generic.IpvxTrafSink\""
+par BurstifierTest.sink protocol 171
+par BurstifierTest typename "\"obsmodules.Examples.BurstifierTest.BurstifierTest\""
+

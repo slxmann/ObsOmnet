@@ -1,0 +1,24 @@
+SB ov 1537 ev 2 rid General-0-20250613-14:40:10-614779
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t obsmodules.Examples.EdgeNodeExample22.EdgeNodeExample22 n EdgeNodeExample22 cm 1
+MDC id 1 d bgb=627.7,411.6
+MC id 2 c inet::NodeBase t inet.node.inet.StandardHost pid 1 n host1 cm 1
+MDC id 2 d p=46,112;i=device/pc2;bgb=1256,1125
+MC id 3 c inet::NodeBase t inet.node.inet.StandardHost pid 1 n host2 cm 1
+MDC id 3 d p=48,272;i=device/pc2;bgb=1256,1125
+MC id 4 c omnetpp::cModule t obsmodules.src.EdgeNode.OBS_EdgeNode pid 1 n edge1 cm 1
+MDC id 4 d p=159,112;i=block/classifier2;bgb=395,337
+GC m 4 g 3145728 n obsIn i 0 o 0
+GC m 4 g 3145729 n obsIn i 1 o 0
+GC m 4 g 4718592 n obsOut i 0 o 1
+GC m 4 g 4718593 n obsOut i 1 o 1
+MC id 5 c omnetpp::cModule t obsmodules.src.EdgeNode.OBS_EdgeNode pid 1 n edge2 cm 1
+MDC id 5 d p=158,272;i=block/classifier2;bgb=395,337
+GC m 5 g 3145728 n obsIn i 0 o 0
+GC m 5 g 3145729 n obsIn i 1 o 0
+GC m 5 g 4718592 n obsOut i 0 o 1
+GC m 5 g 4718593 n obsOut i 1 o 1
+MC id 6 c omnetpp::cModule t obsmodules.src.EdgeNode.OBS_EdgeNode pid 1 n edge3 cm 1
+
+SE e 0 c -1 m ""
